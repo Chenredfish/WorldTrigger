@@ -1,0 +1,9 @@
+res://src/UI/ui_layer.tscn
+res://src/game_state_machine.gd
+res://main.tscn
+res://src/UI/main_form.tscn
+res://src/UI/skill_manu.tscn
+res://src/UI/ui_layer.gd
+res://main.gd
+res://addons/state_machine/state/s_ready_main_ui.gd
+res://addons/state_machine/state/s_playing_init.gd

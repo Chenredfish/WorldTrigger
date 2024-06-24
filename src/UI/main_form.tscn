@@ -1,0 +1,40 @@
+[gd_scene load_steps=4 format=3 uid="uid://bdxgqmfx71r5m"]
+
+[ext_resource type="Script" path="res://src/UI/main_form.gd" id="1_21ow6"]
+[ext_resource type="Texture2D" uid="uid://ijpt8mm7rvqk" path="res://assets/Menu Buttons/Large Buttons/Large Buttons/New game Button.png" id="1_icoa0"]
+[ext_resource type="Texture2D" uid="uid://c7o6tglqpo6yt" path="res://assets/Menu Buttons/Large Buttons/Colored Large Buttons/New Game  col_Button.png" id="2_re4hm"]
+
+[node name="MainForm" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_21ow6")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 128
+theme_override_constants/margin_top = 128
+theme_override_constants/margin_right = 128
+theme_override_constants/margin_bottom = 128
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="new_game" type="TextureButton" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(600, 200)
+layout_mode = 2
+texture_normal = ExtResource("1_icoa0")
+texture_pressed = ExtResource("2_re4hm")
+stretch_mode = 0
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/new_game" to="." method="_on_new_game_pressed"]

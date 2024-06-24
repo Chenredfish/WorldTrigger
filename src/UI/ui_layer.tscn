@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://7frwh2he3d2o"]
+
+[ext_resource type="Script" path="res://src/UI/ui_layer.gd" id="1_rf6ht"]
+[ext_resource type="PackedScene" uid="uid://bdxgqmfx71r5m" path="res://src/UI/main_form.tscn" id="2_qqj3g"]
+[ext_resource type="PackedScene" uid="uid://cu2teh8cydu2e" path="res://src/UI/ready_fight_form.tscn" id="3_7cl7w"]
+
+[node name="UILayer" type="CanvasLayer"]
+script = ExtResource("1_rf6ht")
+
+[node name="MainForm" parent="." instance=ExtResource("2_qqj3g")]
+unique_name_in_owner = true
+visible = false
+
+[node name="ReadyFightForm" parent="." instance=ExtResource("3_7cl7w")]
+unique_name_in_owner = true
+visible = false
+
+[connection signal="btn_new_game_pressed" from="MainForm" to="." method="_on_main_form_btn_new_game_pressed"]

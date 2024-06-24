@@ -1,0 +1,122 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1719215566
+icon.svg::CompressedTexture2D::6468864448699900777::1719021157::1719021180::1::::<><>::
+main.gd::GDScript::-1::1719208984::0::1::::<>Node2D<>::
+main.tscn::PackedScene::1822754805489296517::1719215060::0::1::::<><>::res://main.gd<>res://src/game_state_machine.gd<>uid://7frwh2he3d2o::::res://src/UI/ui_layer.tscn
+README.md::TextFile::-1::1719022368::0::1::::<><>::
+state_enum.gd::GDScript::-1::1719213813::0::1::::<>Node<>::
+::res://addons/::1719192519
+::res://addons/state_machine/::1719212711
+base_state.gd::GDScript::-1::1719193211::0::1::::BaseState<>RefCounted<>::
+base_state_machine.gd::GDScript::-1::1719201542::0::1::::BaseStateMachine<>Node<>::
+::res://addons/state_machine/state/::1719213873
+s_playing_fight.gd::GDScript::-1::1719213109::0::1::::s_Playing_Fight<>BaseState<>::
+s_playing_init.gd::GDScript::-1::1719213271::0::1::::s_Playing_Init<>BaseState<>::
+s_playing_ready.gd::GDScript::-1::1719213160::0::1::::s_Playing_Ready<>BaseState<>::
+s_playing_result.gd::GDScript::-1::1719213120::0::1::::s_Playing_Result<>BaseState<>::
+s_ready_main_ui.gd::GDScript::-1::1719213873::0::1::::s_Ready_Main_UI<>BaseState<>::
+::res://assets/::1719021724
+::res://assets/brackeys_platformer_assets/::1718174655
+LICENSE & CREDITS.txt::TextFile::-1::1718174654::0::1::::<><>::
+::res://assets/brackeys_platformer_assets/fonts/::1719021792
+PixelOperator8-Bold.ttf::FontFile::8407735111688118893::1718174654::1719021792::1::::<><>::
+PixelOperator8.ttf::FontFile::3159212853360375541::1718174654::1719021792::1::::<><>::
+::res://assets/brackeys_platformer_assets/music/::1719021792
+time_for_adventure.mp3::AudioStreamMP3::1314184058766648550::1718174654::1719021792::1::::<><>::
+::res://assets/brackeys_platformer_assets/sounds/::1719021795
+coin.wav::AudioStreamWAV::7434323719099747943::1718174654::1719021795::1::::<><>::
+explosion.wav::AudioStreamWAV::5407003481326432793::1718174654::1719021795::1::::<><>::
+hurt.wav::AudioStreamWAV::7604538684243359841::1718174654::1719021795::1::::<><>::
+jump.wav::AudioStreamWAV::5388762734111679356::1718174655::1719021795::1::::<><>::
+power_up.wav::AudioStreamWAV::3467803254442009390::1718174655::1719021795::1::::<><>::
+tap.wav::AudioStreamWAV::3755936412774812544::1718174655::1719021795::1::::<><>::
+::res://assets/brackeys_platformer_assets/sprites/::1719021793
+coin.png::CompressedTexture2D::3486870073970866666::1718174655::1719021793::1::::<><>::
+fruit.png::CompressedTexture2D::4648094898489138103::1718174655::1719021793::1::::<><>::
+knight.png::CompressedTexture2D::1903917538163836412::1718174655::1719021793::1::::<><>::
+platforms.png::CompressedTexture2D::8604072543789174237::1718174655::1719021793::1::::<><>::
+slime_green.png::CompressedTexture2D::8756652037932203196::1718174655::1719021793::1::::<><>::
+slime_purple.png::CompressedTexture2D::3357952470755215989::1718174655::1719021793::1::::<><>::
+world_tileset.png::CompressedTexture2D::1397238111085892791::1718174655::1719021793::1::::<><>::
+::res://assets/Menu Buttons/::1719021795
+Menu Buttons sprite (BnW).png::CompressedTexture2D::8964909755686978334::1591107720::1719021794::1::::<><>::
+Menu Buttons sprite (Colored).png::CompressedTexture2D::1544863071133494958::1591107745::1719021795::1::::<><>::
+::res://assets/Menu Buttons/Large Buttons/::1719021475
+::res://assets/Menu Buttons/Large Buttons/Colored Large Buttons/::1719021794
+Back  col_Button.png::CompressedTexture2D::8794484964175651675::1591098492::1719021793::1::::<><>::
+Continue  col_Button.png::CompressedTexture2D::9204533621715777910::1591098463::1719021793::1::::<><>::
+Controls  col_Button.png::CompressedTexture2D::6679606863202100512::1591098433::1719021793::1::::<><>::
+Exit  col_Button.png::CompressedTexture2D::3354439673547594108::1591098376::1719021793::1::::<><>::
+Load  col_Button.png::CompressedTexture2D::1231183513663255628::1591098396::1719021793::1::::<><>::
+Menu  col_Button.png::CompressedTexture2D::7040235782373527303::1591098481::1719021793::1::::<><>::
+New Game  col_Button.png::CompressedTexture2D::7049702142100576863::1591098449::1719021793::1::::<><>::
+Options  col_Button.png::CompressedTexture2D::7433325705087289451::1591098422::1719021794::1::::<><>::
+Play col_Button.png::CompressedTexture2D::3941547946617711835::1591098347::1719021794::1::::<><>::
+Quit  col_Button.png::CompressedTexture2D::3081598020033498590::1591098386::1719021794::1::::<><>::
+Resume  col_Button.png::CompressedTexture2D::3278546830946978690::1591098472::1719021794::1::::<><>::
+Settings  col_Button.png::CompressedTexture2D::6734166539556570596::1591098411::1719021794::1::::<><>::
+Start  col_Button.png::CompressedTexture2D::6577588608910272996::1591098363::1719021794::1::::<><>::
+::res://assets/Menu Buttons/Large Buttons/Large Buttons/::1719021794
+Back Button.png::CompressedTexture2D::8203028655588544737::1591098053::1719021794::1::::<><>::
+Continue Button.png::CompressedTexture2D::3512032724205686458::1591098021::1719021794::1::::<><>::
+Controls Button.png::CompressedTexture2D::1429862758692388954::1591097983::1719021794::1::::<><>::
+Exit Button.png::CompressedTexture2D::2575858167151357432::1591097758::1719021794::1::::<><>::
+Load Button.png::CompressedTexture2D::5942208737229086700::1591097933::1719021794::1::::<><>::
+Menu Button.png::CompressedTexture2D::3442894789035428419::1591098042::1719021794::1::::<><>::
+New game Button.png::CompressedTexture2D::581036586263375622::1591097999::1719021794::1::::<><>::
+Options Button.png::CompressedTexture2D::7699283449510214141::1591097970::1719021794::1::::<><>::
+Play Button.png::CompressedTexture2D::1805691106422058800::1591097713::1719021794::1::::<><>::
+Quit Button.png::CompressedTexture2D::2051410730329298270::1591097917::1719021794::1::::<><>::
+Resume Button.png::CompressedTexture2D::8728312264337181804::1591098033::1719021794::1::::<><>::
+Settings Button.png::CompressedTexture2D::316861365914221242::1591097954::1719021792::1::::<><>::
+Start Button.png::CompressedTexture2D::1452983739428434340::1591097726::1719021792::1::::<><>::
+::res://assets/Menu Buttons/Square Buttons/::1719021475
+::res://assets/Menu Buttons/Square Buttons/Colored Square Buttons/::1719021792
+Audio col_Square Button.png::CompressedTexture2D::6785938235223100776::1591099173::1719021792::1::::<><>::
+Back col_Square Button.png::CompressedTexture2D::4071348927115525143::1591099139::1719021792::1::::<><>::
+Down col_Square Button.png::CompressedTexture2D::1443395524315047796::1591099165::1719021792::1::::<><>::
+Home col_Square Button.png::CompressedTexture2D::8887285469781112830::1591099182::1719021792::1::::<><>::
+Info col_Square Button.png::CompressedTexture2D::1881092378326707279::1591099060::1719021792::1::::<><>::
+Music col_Square Button.png::CompressedTexture2D::7709506159932631719::1591099201::1719021792::1::::<><>::
+Next col_Square Button.png::CompressedTexture2D::8084380774257074029::1591099147::1719021792::1::::<><>::
+On Off col_Square Button.png::CompressedTexture2D::3811240824861900988::1591099075::1719021792::1::::<><>::
+Pause col_Square Button.png::CompressedTexture2D::3648428128597737815::1591099049::1719021792::1::::<><>::
+Play col_Square Button.png::CompressedTexture2D::9220557255418941153::1591099038::1719021792::1::::<><>::
+Questionmark col_Square Button.png::CompressedTexture2D::7293996176470147254::1591099192::1719021792::1::::<><>::
+Return col_Square Button.png::CompressedTexture2D::2567665979263121022::1591099130::1719021792::1::::<><>::
+Settings col_Square Button.png::CompressedTexture2D::4501920517327216701::1591099116::1719021792::1::::<><>::
+Up col_Square Button.png::CompressedTexture2D::3236386827732650432::1591099156::1719021792::1::::<><>::
+V col_Square Button.png::CompressedTexture2D::2120157076619183133::1591099085::1719021792::1::::<><>::
+X col_Square Button.png::CompressedTexture2D::4932789619150022057::1591099103::1719021792::1::::<><>::
+::res://assets/Menu Buttons/Square Buttons/Square Buttons/::1719021793
+Audio Square Button.png::CompressedTexture2D::5599997954635864353::1591098851::1719021793::1::::<><>::
+Back Square Button.png::CompressedTexture2D::2024715442621189852::1591098811::1719021793::1::::<><>::
+Down Square Button.png::CompressedTexture2D::3871212800891561828::1591098840::1719021793::1::::<><>::
+Home Square Button.png::CompressedTexture2D::1404510429993990833::1591098860::1719021793::1::::<><>::
+Info Square Button.png::CompressedTexture2D::4940494621231705578::1591098612::1719021793::1::::<><>::
+Music Square Button.png::CompressedTexture2D::6860502665787718990::1591098883::1719021793::1::::<><>::
+Next Square Button.png::CompressedTexture2D::6031760703857938980::1591098821::1719021793::1::::<><>::
+On Off Square Button.png::CompressedTexture2D::6510653296352160913::1591098648::1719021793::1::::<><>::
+Pause Square Button.png::CompressedTexture2D::5716876373016603803::1591098602::1719021793::1::::<><>::
+Play Square Button.png::CompressedTexture2D::2969300878146814622::1591098589::1719021793::1::::<><>::
+Questionmark Square Button.png::CompressedTexture2D::2027545779090466271::1591098873::1719021793::1::::<><>::
+Return Square Button.png::CompressedTexture2D::3022806400774863297::1591098801::1719021793::1::::<><>::
+Settings Square Button.png::CompressedTexture2D::980323506810161908::1591098787::1719021793::1::::<><>::
+Up Square Button.png::CompressedTexture2D::6399567959510545166::1591098829::1719021793::1::::<><>::
+V Square Button.png::CompressedTexture2D::4483706458394671071::1591098666::1719021793::1::::<><>::
+X Square Button.png::CompressedTexture2D::1307667521695383997::1591098765::1719021792::1::::<><>::
+::res://src/::1719213860
+game_state_machine.gd::GDScript::-1::1719213860::0::1::::GameStateMachine<>BaseStateMachine<>::
+::res://src/behaviors/::1719212185
+behavior.gd::GDScript::-1::1719211857::0::1::::Behavior<>Node<>::
+::res://src/behaviors/attacks/::1719212463
+attack.gd::GDScript::-1::1719212299::0::1::::Attack<>Behavior<>::
+normal_attack.gd::GDScript::-1::1719212463::0::1::::<>Attack<>::
+::res://src/behaviors/moves/::1719212296
+move.gd::GDScript::-1::1719212015::0::1::::Move<>Behavior<>::
+normal_move.gd::GDScript::-1::1719212296::0::1::::Normal_Move<>Move<>::
+::res://src/UI/::1719215358
+main_form.gd::GDScript::-1::1719215039::0::1::::<>Control<>::
+main_form.tscn::PackedScene::2644861416702694076::1719215061::0::1::::<><>::res://src/UI/main_form.gd<>uid://ijpt8mm7rvqk::::res://assets/Menu Buttons/Large Buttons/Large Buttons/New game Button.png<>uid://c7o6tglqpo6yt::::res://assets/Menu Buttons/Large Buttons/Colored Large Buttons/New Game  col_Button.png
+ui_layer.gd::GDScript::-1::1719215057::0::1::::<>CanvasLayer<>::
+ui_layer.tscn::PackedScene::2257436771227941232::1719215358::0::1::::<><>::res://src/UI/ui_layer.gd<>uid://bdxgqmfx71r5m::::res://src/UI/main_form.tscn
