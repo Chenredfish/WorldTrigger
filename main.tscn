@@ -1,6 +1,17 @@
-[gd_scene load_steps=2 format=3 uid="uid://077rgf3fq8ov"]
+[gd_scene load_steps=4 format=3 uid="uid://077rgf3fq8ov"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_mtfog"]
+[ext_resource type="Script" path="res://src/game_state_machine.gd" id="2_7awm2"]
+[ext_resource type="PackedScene" uid="uid://7frwh2he3d2o" path="res://src/UI/ui_layer.tscn" id="3_xfomd"]
 
 [node name="main" type="Node2D"]
 script = ExtResource("1_mtfog")
+
+[node name="GameStateMachine" type="Node" parent="." node_paths=PackedStringArray("agent")]
+script = ExtResource("2_7awm2")
+agent = NodePath("..")
+
+[node name="UILayer" parent="." instance=ExtResource("3_xfomd")]
+unique_name_in_owner = true
+
+[connection signal="btn_new_game_pressed" from="UILayer" to="." method="_on_ui_layer_btn_new_game_pressed"]

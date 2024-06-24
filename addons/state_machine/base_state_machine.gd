@@ -22,7 +22,7 @@ func _enter_tree():
 ##執行對應狀態
 func _process(delta)->void:
 	current_state.update(delta)
-
+	
 
 #狀態機啟動
 func launch(state_index:int = 0):
