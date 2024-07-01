@@ -1,1 +1,11 @@
 res://src/game_state_machine.gd
+res://src/map/test_map.tscn
+res://main.tscn
+res://src/UI/ui_layer.tscn
+res://src/UI/skill_manu.tscn
+res://src/UI/main_form.tscn
+res://src/enemy/sandbag.tscn
+res://src/map/test_map.gd
+res://addons/state_machine/state/s_playing_init.gd
+res://main.gd
+res://src/actor/test_actor.tscn

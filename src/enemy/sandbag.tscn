@@ -1,0 +1,47 @@
+[gd_scene load_steps=6 format=3 uid="uid://0ik6kw1cfm7f"]
+
+[ext_resource type="Texture2D" uid="uid://dw011rlnxbbc3" path="res://assets/brackeys_platformer_assets/sprites/slime_green.png" id="1_o3274"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1fp8p"]
+atlas = ExtResource("1_o3274")
+region = Rect2(0, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2xadh"]
+atlas = ExtResource("1_o3274")
+region = Rect2(24, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f3qrf"]
+atlas = ExtResource("1_o3274")
+region = Rect2(48, 24, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dnmx3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1fp8p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2xadh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f3qrf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2xadh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1fp8p")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[node name="Sandbag" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_dnmx3")
+animation = &"idle"
+autoplay = "idle"
+frame = 4
+frame_progress = 0.999455
+offset = Vector2(0, -3)
+flip_h = true
