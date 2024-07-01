@@ -1,0 +1,2 @@
+extends BaseState
+class_name s_Playing_Fight
