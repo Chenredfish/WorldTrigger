@@ -1,47 +1,48 @@
-[gd_scene load_steps=6 format=3 uid="uid://0ik6kw1cfm7f"]
+[gd_scene load_steps=7 format=3 uid="uid://0ik6kw1cfm7f"]
 
 [ext_resource type="Texture2D" uid="uid://dw011rlnxbbc3" path="res://assets/brackeys_platformer_assets/sprites/slime_green.png" id="1_o3274"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_1fp8p"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_uyt34"]
 atlas = ExtResource("1_o3274")
 region = Rect2(0, 24, 24, 24)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_2xadh"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_mp0nr"]
 atlas = ExtResource("1_o3274")
 region = Rect2(24, 24, 24, 24)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_f3qrf"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_gsup3"]
 atlas = ExtResource("1_o3274")
 region = Rect2(48, 24, 24, 24)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_dnmx3"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_npfuv"]
+atlas = ExtResource("1_o3274")
+region = Rect2(72, 24, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1it4c"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_1fp8p")
+"texture": SubResource("AtlasTexture_uyt34")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_2xadh")
+"texture": SubResource("AtlasTexture_mp0nr")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_f3qrf")
+"texture": SubResource("AtlasTexture_gsup3")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_2xadh")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_1fp8p")
+"texture": SubResource("AtlasTexture_npfuv")
 }],
 "loop": true,
-"name": &"idle",
+"name": &"default",
 "speed": 5.0
 }]
 
-[node name="Sandbag" type="AnimatedSprite2D"]
-sprite_frames = SubResource("SpriteFrames_dnmx3")
-animation = &"idle"
-autoplay = "idle"
-frame = 4
-frame_progress = 0.999455
-offset = Vector2(0, -3)
+[node name="Sandbag" type="Node2D"]
+position = Vector2(0, -3)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_1it4c")
+autoplay = "default"
+frame_progress = 0.350867
 flip_h = true

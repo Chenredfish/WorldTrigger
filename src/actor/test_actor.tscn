@@ -1,44 +1,71 @@
-[gd_scene load_steps=7 format=3 uid="uid://rt4jo310ctba"]
+[gd_scene load_steps=8 format=3 uid="uid://rt4jo310ctba"]
 
+[ext_resource type="Script" path="res://src/actor/test_actor.gd" id="1_hlwki"]
 [ext_resource type="Texture2D" uid="uid://2ejijx5xdofs" path="res://assets/brackeys_platformer_assets/sprites/knight.png" id="1_p10h0"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_si1f3"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_s3thd"]
 atlas = ExtResource("1_p10h0")
 region = Rect2(0, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ah2p7"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_oql35"]
 atlas = ExtResource("1_p10h0")
 region = Rect2(32, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_dwuiv"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_3jlit"]
 atlas = ExtResource("1_p10h0")
 region = Rect2(64, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_mdbon"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_hlhof"]
 atlas = ExtResource("1_p10h0")
 region = Rect2(96, 0, 32, 32)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_4oc7o"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_3fmgk"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_si1f3")
+"texture": SubResource("AtlasTexture_s3thd")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ah2p7")
+"texture": SubResource("AtlasTexture_oql35")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_dwuiv")
+"texture": SubResource("AtlasTexture_3jlit")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_mdbon")
+"texture": SubResource("AtlasTexture_hlhof")
 }],
 "loop": true,
 "name": &"default",
 "speed": 5.0
 }]
 
-[node name="TestActor" type="AnimatedSprite2D"]
-sprite_frames = SubResource("SpriteFrames_4oc7o")
+[node name="TestActor" type="Node2D"]
+script = ExtResource("1_hlwki")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(16, 12)
+sprite_frames = SubResource("SpriteFrames_3fmgk")
 autoplay = "default"
-offset = Vector2(0, -4)
+frame_progress = 0.0435868
+
+[node name="control_actor" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 32.0
+offset_bottom = 32.0
+
+[node name="Button" type="Button" parent="control_actor"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -10.0
+offset_top = -12.0
+offset_right = 10.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[connection signal="pressed" from="control_actor/Button" to="." method="_on_button_pressed"]
