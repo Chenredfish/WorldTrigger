@@ -1,15 +1,35 @@
 extends BaseState
 class_name s_Playing_Init
 
+const MOUSE_FRAME = preload("res://src/map/mouse_frame.tscn")
+var mouse_frame:Node2D
+
 func enter(_msg:Dictionary = {}):
 		agent.load_map()
+	
+		mouse_frame = MOUSE_FRAME.instantiate()
+		agent.add_child(mouse_frame)
+		
+		_update_mouse_frame()
 		print("s_Playing_Init")
 		
 func update(delta:float):
+	_show_ready_fight_form()
+	
+	_update_mouse_frame()
+	
+	
+func  _show_ready_fight_form():
 	if Input.is_action_just_pressed("left_mouse_pressed") :
-		print("滑鼠位置：", agent.get_mouse_position_tile_map())
-		print("操作物位置", agent.get_map_actor_map_position())
-		if agent.get_map_actor_map_position() == agent.get_mouse_position_tile_map():
-			agent.ui_layer.show_ready_fight_form()
-		else:
+		#print("滑鼠位置：", agent.get_mouse_position_tile_map())
+		#print("操作物位置：", agent.get_map_actor_map_position())
+		if agent.get_map_actor_map_position() != agent.get_mouse_position_tile_map():
 			agent.ui_layer.hide_ready_fight_form()
+
+func _update_mouse_frame():
+	#print(agent.current_map.map_to_local(agent.get_mouse_position_tile_map()))
+	
+	#scale的兩個值一樣，只取一個
+	var tilemap_scale = agent.current_map.get_scale().x
+	var tilemap_rendering_quadrant_size = agent.current_map.get_rendering_quadrant_size()
+	mouse_frame.set_position(agent.get_mouse_position_tile_map()*tilemap_rendering_quadrant_size*tilemap_scale)

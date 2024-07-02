@@ -23,6 +23,11 @@ func load_map():
 	current_map = TEST_MAP.instantiate()
 	self.add_child(current_map)
 	
+	current_map.show_skill_btn_pressed.connect(
+		func ():
+			ui_layer.show_ready_fight_form()
+	)
+	
 	
 func get_mouse_position_tile_map():
 	if current_map:
