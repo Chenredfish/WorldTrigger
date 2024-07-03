@@ -15,44 +15,56 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = 8.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
 layout_mode = 2
-size_flags_vertical = 4
-theme_override_constants/separation = 32
+size_flags_horizontal = 0
+size_flags_vertical = 8
+theme_override_constants/separation = 352
 
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
-custom_minimum_size = Vector2(92, 464)
+[node name="SkillManu" parent="MarginContainer/HBoxContainer" instance=ExtResource("1_e2sgw")]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(192, 192)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="Button" type="Button" parent="MarginContainer/HBoxContainer/MarginContainer"]
+custom_minimum_size = Vector2(160, 160)
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 880
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(104, 464)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
 theme_override_constants/margin_left = 32
 theme_override_constants/margin_top = 64
 
-[node name="Button" type="Button" parent="MarginContainer/VBoxContainer/MarginContainer"]
+[node name="Button" type="Button" parent="MarginContainer/HBoxContainer2/MarginContainer"]
+custom_minimum_size = Vector2(80, 400)
 layout_mode = 2
 
-[node name="MarginContainer2" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
-custom_minimum_size = Vector2(0, 152)
+[node name="MarginContainer3" type="MarginContainer" parent="MarginContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(128, 128)
 layout_mode = 2
-size_flags_vertical = 4
+size_flags_horizontal = 8
+size_flags_vertical = 0
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/MarginContainer2"]
-layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 4
-theme_override_constants/separation = 404
-
-[node name="SkillManu" parent="MarginContainer/VBoxContainer/MarginContainer2/HBoxContainer" instance=ExtResource("1_e2sgw")]
-layout_mode = 2
-
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/MarginContainer2/HBoxContainer"]
-custom_minimum_size = Vector2(92, 92)
-layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 4
-
-[node name="Button" type="Button" parent="MarginContainer/VBoxContainer/MarginContainer2/HBoxContainer/MarginContainer"]
+[node name="SettingButton" type="Button" parent="MarginContainer/HBoxContainer2/MarginContainer3"]
+custom_minimum_size = Vector2(96, 96)
 layout_mode = 2

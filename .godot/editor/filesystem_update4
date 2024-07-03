@@ -1,9 +1,3 @@
+res://src/UI/ready_fight_form.tscn
 res://src/game_state_machine.gd
 res://main.gd
-res://src/map/test_map.tscn
-res://addons/state_machine/state/s_playing_init.gd
-res://main.tscn
-res://src/map/mouse_frame.tscn
-res://src/actor/test_actor.tscn
-res://src/actor/test_actor.gd
-res://src/map/test_map.gd
