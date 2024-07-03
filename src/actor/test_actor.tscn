@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://rt4jo310ctba"]
+[gd_scene load_steps=8 format=3 uid="uid://rt4jo310ctba"]
 
 [ext_resource type="Texture2D" uid="uid://2ejijx5xdofs" path="res://assets/brackeys_platformer_assets/sprites/knight.png" id="1_p10h0"]
+[ext_resource type="Script" path="res://src/actor/test_actor.gd" id="1_ukf4f"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_s3thd"]
 atlas = ExtResource("1_p10h0")
@@ -39,6 +40,7 @@ animations = [{
 }]
 
 [node name="TestActor" type="Node2D"]
+script = ExtResource("1_ukf4f")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(16, 12)
