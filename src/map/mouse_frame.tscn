@@ -1,0 +1,49 @@
+[gd_scene load_steps=7 format=3 uid="uid://by448b6tjp2gk"]
+
+[ext_resource type="Texture2D" uid="uid://cu27fmpebyhp6" path="res://assets/Complete_GUI_Essential_Pack_Free_Version/01_Basic_Collection/01_Flat_Theme/Spritesheets/Spritesheet_UI_Flat_Select_01.png" id="1_ro4bl"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_drie6"]
+atlas = ExtResource("1_ro4bl")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k8hix"]
+atlas = ExtResource("1_ro4bl")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g4rbu"]
+atlas = ExtResource("1_ro4bl")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_37yhf"]
+atlas = ExtResource("1_ro4bl")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ymj7h"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_drie6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k8hix")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g4rbu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_37yhf")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="mouse_frame" type="Node2D"]
+scale = Vector2(2, 2)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(16, 16)
+sprite_frames = SubResource("SpriteFrames_ymj7h")
+autoplay = "default"
+frame = 2
+frame_progress = 0.792874
