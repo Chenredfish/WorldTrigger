@@ -42,6 +42,10 @@ animations = [{
 
 [node name="TestActor" type="Node2D"]
 script = ExtResource("1_ukf4f")
+attack_amount = 20
+behavior_amount = 7
+max_health = 3000
+avoid = 5
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(16, 12)

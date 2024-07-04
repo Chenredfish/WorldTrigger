@@ -1,5 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://0ik6kw1cfm7f"]
+[gd_scene load_steps=8 format=3 uid="uid://0ik6kw1cfm7f"]
 
+[ext_resource type="Script" path="res://src/enemy/sandbag.gd" id="1_kfh0u"]
 [ext_resource type="Texture2D" uid="uid://dw011rlnxbbc3" path="res://assets/brackeys_platformer_assets/sprites/slime_green.png" id="1_o3274"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uyt34"]
@@ -39,9 +40,10 @@ animations = [{
 }]
 
 [node name="Sandbag" type="Node2D"]
-position = Vector2(0, -3)
+script = ExtResource("1_kfh0u")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(16, 12)
 sprite_frames = SubResource("SpriteFrames_1it4c")
 autoplay = "default"
 frame_progress = 0.350867
