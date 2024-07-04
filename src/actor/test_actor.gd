@@ -13,4 +13,9 @@ func _process(delta):
 	pass
 
 func _on_show_skill_btn_pressed():
+	pass
+
+
+func _on_touch_screen_button_pressed():
 	show_skill_btn_pressed.emit()
+	

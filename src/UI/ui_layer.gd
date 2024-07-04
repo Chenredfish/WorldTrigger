@@ -20,7 +20,9 @@ func show_ready_fight_form():
 
 func hide_ready_fight_form():
 	ready_fight_form.hide()
-
+	
+func get_ready_fight_form():
+	return ready_fight_form.is_visible()
 
 #以下都是按鈕觸發
 

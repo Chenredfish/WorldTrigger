@@ -25,7 +25,10 @@ func load_map():
 	
 	current_map.show_skill_btn_pressed.connect(
 		func ():
-			ui_layer.show_ready_fight_form()
+			if ui_layer.get_ready_fight_form():
+				ui_layer.hide_ready_fight_form()
+			else:
+				ui_layer.show_ready_fight_form()
 	)
 	
 	
