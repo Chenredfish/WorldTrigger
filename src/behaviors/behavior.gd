@@ -1,4 +1,4 @@
 extends Node
-class_name Behavior
+class_name BaseBehavior
 
 @export var kind:Dictionary = {"assist":false, "move":false, "attack":false}

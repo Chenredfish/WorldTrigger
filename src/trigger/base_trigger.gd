@@ -1,7 +1,7 @@
-extends BaseTrigger
-class_name TestTrigger
+extends Node
+class_name BaseTrigger
 
-
+@export var trigger_attack_amount:int
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

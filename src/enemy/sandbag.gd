@@ -1,7 +1,5 @@
-extends BaseTrigger
-class_name TestTrigger
-
-
+extends Node2D
+class_name Sandbag
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

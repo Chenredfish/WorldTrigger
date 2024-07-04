@@ -1,4 +1,4 @@
-extends Behavior
+extends BaseBehavior
 class_name Attack
 
 var power:int
