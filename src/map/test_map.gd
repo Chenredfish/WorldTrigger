@@ -35,14 +35,23 @@ func get_actor_map_position():
 
 func _on_show_skill_btn_pressed():
 	actor.add_behavior(NormalMove.new(Vector2i(5,4)))  #準備階段輸入
-	actor.add_behavior(NormalMove.new(Vector2i(6,4)))  #準備階段輸入
 	actor.take_behavior() #執行階段
 	actor.remove_behaviors() #執行階段
 	
 	show_skill_btn_pressed.emit()
 
 func _move_actor(aim_site:Vector2i, moved_actor:Node2D):
-	moved_actor.set_position(Vector2(self.map_to_local(aim_site)))
+	moved_actor.play_run_animate()
+	
+	while self.map_to_local(aim_site) != moved_actor.get_position():
+		if self.map_to_local(aim_site).x > moved_actor.get_position().x:
+			moved_actor.position.x+=2
+			moved_actor.turn_right()
+		else:
+			moved_actor.position.x-=2
+			moved_actor.turn_left()
+			
+		await get_tree().create_timer(0.1).timeout
 
 func add_role(preload_role, position:Vector2i):
 	var role:Node2D

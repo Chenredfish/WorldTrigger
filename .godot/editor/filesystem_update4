@@ -1,14 +1,7 @@
-res://main.tscn
+res://src/actor/test_actor.tscn
 res://src/game_state_machine.gd
 res://main.gd
-res://src/map/test_map.tscn
-res://src/actor/test_actor.tscn
 res://src/actor/test_actor.gd
-res://src/actor/base_actor.gd
-res://src/behaviors/behavior.gd
-res://src/behaviors/moves/move.gd
-res://src/behaviors/moves/normal_move.gd
-res://src/trigger/base_trigger.gd
-res://src/trigger/test_trigger.gd
-res://src/behaviors/attacks/normal_attack.gd
+res://main.tscn
 res://src/map/test_map.gd
+res://src/trigger/test_trigger.gd

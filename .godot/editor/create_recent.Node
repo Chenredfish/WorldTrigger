@@ -1,3 +1,5 @@
+TestTrigger
+AnimationPlayer
 TouchScreenButton
 HBoxContainer
 GridContainer
@@ -11,4 +13,3 @@ TileMap
 ColorRect
 VBoxContainer
 TextureButton
-CanvasLayer
