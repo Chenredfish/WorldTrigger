@@ -6,7 +6,7 @@
 texture = ExtResource("1_dfe32")
 expand_margin_top = 10.0
 expand_margin_bottom = 10.0
-region_rect = Rect2(258, 322, 60, 28)
+region_rect = Rect2(260, 324, 56, 24)
 
 [sub_resource type="Theme" id="Theme_0x3v5"]
 Panel/styles/panel = SubResource("StyleBoxTexture_w6bu7")

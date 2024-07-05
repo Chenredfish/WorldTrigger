@@ -1,14 +1,13 @@
-[gd_scene load_steps=12 format=3 uid="uid://cu2teh8cydu2e"]
+[gd_scene load_steps=13 format=3 uid="uid://cu2teh8cydu2e"]
 
 [ext_resource type="PackedScene" uid="uid://sn3te1ks0kww" path="res://src/UI/skill_manu.tscn" id="1_e2sgw"]
+[ext_resource type="Script" path="res://src/UI/ready_fight_form.gd" id="1_lrli3"]
 [ext_resource type="Texture2D" uid="uid://c1mylnha2cekb" path="res://assets/UI Buttons/Pixel_Button.png" id="2_3c1mp"]
 [ext_resource type="Texture2D" uid="uid://6tcknnunbqyv" path="res://assets/UI Buttons/Pixel_Button_spin.png" id="3_mqiqp"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_l7wou"]
 texture = ExtResource("3_mqiqp")
-texture_margin_top = 2.0
-texture_margin_bottom = 2.0
-region_rect = Rect2(161.678, 322.095, 28.5126, 59.863)
+region_rect = Rect2(164, 324, 24, 56)
 
 [sub_resource type="Theme" id="Theme_rhjyr"]
 Panel/styles/panel = SubResource("StyleBoxTexture_l7wou")
@@ -46,8 +45,10 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_lrli3")
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
+[node name="UIContainer" type="MarginContainer" parent="."]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(1136, 648)
 layout_mode = 1
 anchors_preset = 15
@@ -57,11 +58,11 @@ offset_right = 8.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer"]
+[node name="HBoxContainer2" type="HBoxContainer" parent="UIContainer"]
 layout_mode = 2
 theme_override_constants/separation = 880
 
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/HBoxContainer2"]
+[node name="MarginContainer" type="MarginContainer" parent="UIContainer/HBoxContainer2"]
 custom_minimum_size = Vector2(104, 464)
 layout_mode = 2
 size_flags_horizontal = 0
@@ -69,11 +70,11 @@ size_flags_vertical = 0
 theme_override_constants/margin_left = 32
 theme_override_constants/margin_top = 64
 
-[node name="Panel" type="Panel" parent="MarginContainer/HBoxContainer2/MarginContainer"]
+[node name="Panel" type="Panel" parent="UIContainer/HBoxContainer2/MarginContainer"]
 layout_mode = 2
 theme = SubResource("Theme_rhjyr")
 
-[node name="MarginContainer3" type="MarginContainer" parent="MarginContainer/HBoxContainer2"]
+[node name="MarginContainer3" type="MarginContainer" parent="UIContainer/HBoxContainer2"]
 custom_minimum_size = Vector2(128, 128)
 layout_mode = 2
 size_flags_horizontal = 8
@@ -82,21 +83,21 @@ theme_override_constants/margin_left = 0
 theme_override_constants/margin_top = 32
 theme_override_constants/margin_right = 32
 
-[node name="SettingButton" type="Button" parent="MarginContainer/HBoxContainer2/MarginContainer3"]
+[node name="SettingButton" type="Button" parent="UIContainer/HBoxContainer2/MarginContainer3"]
 custom_minimum_size = Vector2(96, 96)
 layout_mode = 2
 theme = SubResource("Theme_x00op")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+[node name="SkillContainer" type="HBoxContainer" parent="UIContainer"]
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 8
 theme_override_constants/separation = 352
 
-[node name="SkillManu" parent="MarginContainer/HBoxContainer" instance=ExtResource("1_e2sgw")]
+[node name="SkillMenu" parent="UIContainer/SkillContainer" instance=ExtResource("1_e2sgw")]
 layout_mode = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/HBoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="UIContainer/SkillContainer"]
 custom_minimum_size = Vector2(192, 192)
 layout_mode = 2
 size_flags_horizontal = 0
@@ -104,7 +105,7 @@ size_flags_vertical = 4
 theme_override_constants/margin_right = 32
 theme_override_constants/margin_bottom = 32
 
-[node name="StartButton" type="Button" parent="MarginContainer/HBoxContainer/MarginContainer"]
+[node name="StartButton" type="Button" parent="UIContainer/SkillContainer/MarginContainer"]
 custom_minimum_size = Vector2(160, 160)
 layout_mode = 2
 theme = SubResource("Theme_7d07b")

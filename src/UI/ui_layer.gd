@@ -4,10 +4,12 @@ extends CanvasLayer
 @onready var ready_fight_form = %ReadyFightForm
 
 signal btn_new_game_pressed
-
-
-
+	
 #開關UI
+func start_main_form():
+	ready_fight_form.show()
+	ready_fight_form.hide_actor_skill()
+
 func show_main_form():
 	main_form.show()
 
@@ -17,12 +19,13 @@ func hide_main_form():
 	
 func show_ready_fight_form():
 	ready_fight_form.show()
+	ready_fight_form.show_actor_skill()
 
 func hide_ready_fight_form():
-	ready_fight_form.hide()
+	ready_fight_form.hide_actor_skill()
 	
 func get_ready_fight_form():
-	return ready_fight_form.is_visible()
+	return ready_fight_form.panel.is_visible()
 
 #以下都是按鈕觸發
 
