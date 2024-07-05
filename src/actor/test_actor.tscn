@@ -225,13 +225,12 @@ animations = [{
 "speed": 6.0
 }]
 
-[node name="TestActor" type="Node2D" node_paths=PackedStringArray("trigger1")]
+[node name="TestActor" type="Node2D"]
 script = ExtResource("1_ukf4f")
 attack_amount = 20
 behavior_amount = 7
 max_health = 3000
 avoid = 5
-trigger1 = NodePath("")
 
 [node name="test_actor_animate" type="AnimatedSprite2D" parent="."]
 unique_name_in_owner = true
