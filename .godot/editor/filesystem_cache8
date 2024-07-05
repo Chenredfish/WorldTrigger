@@ -1,8 +1,8 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1720086853
+::res://::1720139909
 icon.svg::CompressedTexture2D::6468864448699900777::1719021157::1719021180::1::::<><>::
-main.gd::GDScript::-1::1720075860::0::1::::<>Node2D<>::
-main.tscn::PackedScene::1822754805489296517::1720076848::0::1::::<><>::res://main.gd<>res://src/game_state_machine.gd<>uid://7frwh2he3d2o::::res://src/UI/ui_layer.tscn
+main.gd::GDScript::-1::1720086972::0::1::::<>Node2D<>::
+main.tscn::PackedScene::1822754805489296517::1720087947::0::1::::<><>::res://main.gd<>res://src/game_state_machine.gd<>uid://7frwh2he3d2o::::res://src/UI/ui_layer.tscn
 README.md::TextFile::-1::1719816918::0::1::::<><>::
 state_enum.gd::GDScript::-1::1719213813::0::1::::<>Node<>::
 ::res://addons/::1719192519
@@ -250,28 +250,30 @@ Settings Square Button.png::CompressedTexture2D::980323506810161908::1591098787:
 Up Square Button.png::CompressedTexture2D::6399567959510545166::1591098829::1719021793::1::::<><>::
 V Square Button.png::CompressedTexture2D::4483706458394671071::1591098666::1719021793::1::::<><>::
 X Square Button.png::CompressedTexture2D::1307667521695383997::1591098765::1719021792::1::::<><>::
-::res://src/::1720077030
-game_state_machine.gd::GDScript::-1::1720075860::0::1::::GameStateMachine<>BaseStateMachine<>::
-::res://src/actor/::1720080447
-test_actor.gd::GDScript::-1::1720080402::0::1::::TestActor<>Node2D<>::
-test_actor.tscn::PackedScene::1234211163905313486::1720080447::0::1::::<><>::uid://2ejijx5xdofs::::res://assets/brackeys_platformer_assets/sprites/knight.png<>res://src/actor/test_actor.gd<>uid://cyftityv7ykkn::::res://icon.svg
-::res://src/behaviors/::1719212185
-behavior.gd::GDScript::-1::1719211857::0::1::::Behavior<>Node<>::
-::res://src/behaviors/attacks/::1719212463
-attack.gd::GDScript::-1::1719212299::0::1::::Attack<>Behavior<>::
+::res://src/::1720086972
+game_state_machine.gd::GDScript::-1::1720086972::0::1::::GameStateMachine<>BaseStateMachine<>::
+::res://src/actor/::1720088180
+base_actor.gd::GDScript::-1::1720088180::0::1::::Actor<>Node<>::
+test_actor.gd::GDScript::-1::1720087978::0::1::::TestActor<>Actor<>::
+test_actor.tscn::PackedScene::1234211163905313486::1720088180::0::1::::<><>::uid://2ejijx5xdofs::::res://assets/brackeys_platformer_assets/sprites/knight.png<>res://src/actor/test_actor.gd<>uid://cyftityv7ykkn::::res://icon.svg
+::res://src/behaviors/::1720087896
+behavior.gd::GDScript::-1::1720087896::0::1::::BaseBehavior<>Node<>::
+::res://src/behaviors/attacks/::1720087913
+attack.gd::GDScript::-1::1720087913::0::1::::Attack<>BaseBehavior<>::
 normal_attack.gd::GDScript::-1::1719212463::0::1::::<>Attack<>::
-::res://src/behaviors/moves/::1719212296
-move.gd::GDScript::-1::1719212015::0::1::::Move<>Behavior<>::
+::res://src/behaviors/moves/::1720087905
+move.gd::GDScript::-1::1720087905::0::1::::Move<>BaseBehavior<>::
 normal_move.gd::GDScript::-1::1719212296::0::1::::Normal_Move<>Move<>::
 ::res://src/enemy/::1720076848
 sandbag.gd::GDScript::-1::1720075970::0::1::::Sandbag<>Node2D<>::
 sandbag.tscn::PackedScene::1771899202925407997::1720076848::0::1::::<><>::res://src/enemy/sandbag.gd<>uid://dw011rlnxbbc3::::res://assets/brackeys_platformer_assets/sprites/slime_green.png
-::res://src/map/::1720079001
+::res://src/map/::1720087947
 mouse_frame.tscn::PackedScene::4132639711150908906::1719911618::0::1::::<><>::uid://cu27fmpebyhp6::::res://assets/Complete_GUI_Essential_Pack_Free_Version/01_Basic_Collection/01_Flat_Theme/Spritesheets/Spritesheet_UI_Flat_Select_01.png
 test_map.gd::GDScript::-1::1720077249::0::1::::TestMap<>TileMap<>::
-test_map.tscn::PackedScene::5634099492592397999::1720079001::0::1::::<><>::uid://t53kpr74jff8::::res://assets/brackeys_platformer_assets/sprites/world_tileset.png<>uid://0ik6kw1cfm7f::::res://src/enemy/sandbag.tscn<>uid://rt4jo310ctba::::res://src/actor/test_actor.tscn<>res://src/map/test_map.gd
-::res://src/trigger/::1720077123
-test_trigger.gd::GDScript::-1::1720077123::0::1::::TestTrigger<>Node<>::
+test_map.tscn::PackedScene::5634099492592397999::1720087947::0::1::::<><>::uid://t53kpr74jff8::::res://assets/brackeys_platformer_assets/sprites/world_tileset.png<>uid://0ik6kw1cfm7f::::res://src/enemy/sandbag.tscn<>uid://rt4jo310ctba::::res://src/actor/test_actor.tscn<>res://src/map/test_map.gd
+::res://src/trigger/::1720087716
+base_trigger.gd::GDScript::-1::1720087716::0::1::::BaseTrigger<>Node<>::
+test_trigger.gd::GDScript::-1::1720087694::0::1::::TestTrigger<>BaseTrigger<>::
 ::res://src/UI/::1720075868
 main_form.gd::GDScript::-1::1719215039::0::1::::<>Control<>::
 main_form.tscn::PackedScene::2644861416702694076::1719800861::0::1::::<><>::res://src/UI/main_form.gd<>uid://ijpt8mm7rvqk::::res://assets/Menu Buttons/Large Buttons/Large Buttons/New game Button.png<>uid://c7o6tglqpo6yt::::res://assets/Menu Buttons/Large Buttons/Colored Large Buttons/New Game  col_Button.png

@@ -2,12 +2,6 @@ extends Node
 class_name BaseTrigger
 
 @export var trigger_attack_amount:int
+@export var weight_amount:int ##1或2
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
+var behavior_choice:Array[BaseBehavior]=[]

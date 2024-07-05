@@ -18,6 +18,7 @@ func _ready():
 	#新增玩家
 	actor = add_role(TEST_ACTOR, actor_start_position)
 	actor.show_skill_btn_pressed.connect(_on_show_skill_btn_pressed)
+	actor.move_actor.connect(_move_actor)
 	self.add_child(actor)
 	
 	#新增敵人
@@ -33,11 +34,19 @@ func get_actor_map_position():
 		return self.local_to_map(actor.get_position())
 
 func _on_show_skill_btn_pressed():
+	actor.add_behavior(NormalMove.new(Vector2i(5,4)))  #準備階段輸入
+	actor.add_behavior(NormalMove.new(Vector2i(6,4)))  #準備階段輸入
+	actor.take_behavior() #執行階段
+	actor.remove_behaviors() #執行階段
+	
 	show_skill_btn_pressed.emit()
+
+func _move_actor(aim_site:Vector2i, moved_actor:Node2D):
+	moved_actor.set_position(Vector2(self.map_to_local(aim_site)))
 
 func add_role(preload_role, position:Vector2i):
 	var role:Node2D
 	role = preload_role.instantiate()
-	role.set_position(Vector2(map_to_local(position)))
+	role.set_position(Vector2(self.map_to_local(position)))
 	
 	return role

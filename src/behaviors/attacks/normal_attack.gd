@@ -1,5 +1,5 @@
 extends Attack
-
+class_name NormalAttack
 
 func  _init(power:int = 25, power_times:int = 1):
 	super()
