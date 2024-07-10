@@ -1,10 +1,10 @@
 [gd_scene load_steps=12 format=3 uid="uid://sn3te1ks0kww"]
 
-[ext_resource type="Script" path="res://src/UI/skill_manu.gd" id="1_4qk55"]
-[ext_resource type="Texture2D" uid="uid://c1mylnha2cekb" path="res://assets/UI Buttons/Pixel_Button.png" id="1_dfe32"]
+[ext_resource type="Script" path="res://src/UI/skill_menu.gd" id="1_mk1ea"]
+[ext_resource type="Texture2D" uid="uid://c1mylnha2cekb" path="res://assets/UI Buttons/Pixel_Button.png" id="2_dk6tq"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_w6bu7"]
-texture = ExtResource("1_dfe32")
+texture = ExtResource("2_dk6tq")
 expand_margin_top = 10.0
 expand_margin_bottom = 10.0
 region_rect = Rect2(260, 324, 56, 24)
@@ -13,15 +13,15 @@ region_rect = Rect2(260, 324, 56, 24)
 Panel/styles/panel = SubResource("StyleBoxTexture_w6bu7")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kjmbk"]
-texture = ExtResource("1_dfe32")
+texture = ExtResource("2_dk6tq")
 region_rect = Rect2(101, 129, 22, 24)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_b2ec6"]
-texture = ExtResource("1_dfe32")
+texture = ExtResource("2_dk6tq")
 region_rect = Rect2(101, 129, 22, 24)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_itwh6"]
-texture = ExtResource("1_dfe32")
+texture = ExtResource("2_dk6tq")
 region_rect = Rect2(132, 132, 24, 24)
 
 [sub_resource type="Theme" id="Theme_qkqnf"]
@@ -32,11 +32,11 @@ Button/styles/normal = SubResource("StyleBoxTexture_b2ec6")
 Button/styles/pressed = SubResource("StyleBoxTexture_itwh6")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_43yku"]
-texture = ExtResource("1_dfe32")
+texture = ExtResource("2_dk6tq")
 region_rect = Rect2(101, 225, 22, 24)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qcht8"]
-texture = ExtResource("1_dfe32")
+texture = ExtResource("2_dk6tq")
 region_rect = Rect2(132, 228, 24, 24)
 
 [sub_resource type="Theme" id="Theme_jdf10"]
@@ -48,7 +48,7 @@ Button/styles/pressed = SubResource("StyleBoxTexture_qcht8")
 custom_minimum_size = Vector2(592, 128)
 size_flags_horizontal = 8
 size_flags_vertical = 4
-script = ExtResource("1_4qk55")
+script = ExtResource("1_mk1ea")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 2

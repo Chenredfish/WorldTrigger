@@ -1,4 +1,5 @@
 extends MarginContainer
+class_name skillmenu
 
 @onready var ult_button = %SkillContainer/MarginContainer/UltButton
 @onready var button_1 = %SkillContainer/MarginContainer2/Button1
@@ -10,12 +11,13 @@ extends MarginContainer
 signal add_skill(action : Button)
 
 func _ready():
-	ult_button.pressed.connect(self.skill_btn_pressed(0))
-	button_1.pressed.connect(self.skill_btn_pressed(1))
-	button_2.pressed.connect(self.skill_btn_pressed(2))
-	button_3.pressed.connect(self.skill_btn_pressed(3))
-	button_4.pressed.connect(self.skill_btn_pressed(4))
-	button_5.pressed.connect(self.skill_btn_pressed(5))
-
-func skill_btn_pressed(action : int):
+	#ult_button.pressed.connect(skill_btn_pressed(ult_button))
+	#button_1.pressed.connect(skill_btn_pressed(button_1))
+	#button_2.pressed.connect(skill_btn_pressed(button_2))
+	#button_3.pressed.connect(skill_btn_pressed(button_3))
+	#button_4.pressed.connect(skill_btn_pressed(button_4))
+	#button_5.pressed.connect(skill_btn_pressed(button_5))
 	pass
+
+func skill_btn_pressed(action : Button):
+	add_skill.emit(action)

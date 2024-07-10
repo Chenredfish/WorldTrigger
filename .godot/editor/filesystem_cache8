@@ -1,8 +1,8 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1720580130
+::res://::1720610433
 icon.svg::CompressedTexture2D::6468864448699900777::1719814726::1719814726::1::::<><>::
-main.gd::GDScript::-1::1720576624::0::1::::<>Node2D<>::
-main.tscn::PackedScene::1822754805489296517::1720576624::0::1::::<><>::res://main.gd<>res://src/game_state_machine.gd<>uid://7frwh2he3d2o::::res://src/UI/ui_layer.tscn
+main.gd::GDScript::-1::1720610117::0::1::::<>Node2D<>::
+main.tscn::PackedScene::1822754805489296517::1720610142::0::1::::<><>::res://main.gd<>res://src/game_state_machine.gd<>uid://7frwh2he3d2o::::res://src/UI/ui_layer.tscn
 README.md::TextFile::-1::1719981404::0::1::::<><>::
 state_enum.gd::GDScript::-1::1719814726::0::1::::<>Node<>::
 ::res://addons/::1719814726
@@ -253,12 +253,12 @@ X Square Button.png::CompressedTexture2D::1307667521695383997::1719814726::17198
 ::res://assets/UI Buttons/::1720162349
 Pixel_Button.png::CompressedTexture2D::6624001380236457829::1720158271::1720162349::1::::<><>::
 Pixel_Button_spin.png::CompressedTexture2D::2215217325842870301::1720162341::1720162342::1::::<><>::
-::res://src/::1720576624
-game_state_machine.gd::GDScript::-1::1720576624::0::1::::GameStateMachine<>BaseStateMachine<>::
-::res://src/actor/::1720576624
+::res://src/::1720610117
+game_state_machine.gd::GDScript::-1::1720610117::0::1::::GameStateMachine<>BaseStateMachine<>::
+::res://src/actor/::1720610142
 base_actor.gd::GDScript::-1::1720152897::0::1::::Actor<>Node2D<>::
-test_actor.gd::GDScript::-1::1720152897::0::1::::TestActor<>Actor<>::
-test_actor.tscn::PackedScene::1234211163905313486::1720576624::0::1::::<><>::uid://2ejijx5xdofs::::res://assets/brackeys_platformer_assets/sprites/knight.png<>res://src/actor/test_actor.gd<>uid://cyftityv7ykkn::::res://icon.svg
+test_actor.gd::GDScript::-1::1720582359::0::1::::TestActor<>Actor<>::
+test_actor.tscn::PackedScene::1234211163905313486::1720610142::0::1::::<><>::uid://2ejijx5xdofs::::res://assets/brackeys_platformer_assets/sprites/knight.png<>res://src/actor/test_actor.gd<>uid://cyftityv7ykkn::::res://icon.svg
 ::res://src/behaviors/::1720152897
 behavior.gd::GDScript::-1::1720152897::0::1::::BaseBehavior<>Node<>::
 ::res://src/behaviors/attacks/::1720152897
@@ -277,13 +277,14 @@ test_map.tscn::PackedScene::5634099492592397999::1720152897::0::1::::<><>::uid:/
 ::res://src/trigger/::1720152897
 base_trigger.gd::GDScript::-1::1720152897::0::1::::BaseTrigger<>Node<>::
 test_trigger.gd::GDScript::-1::1720152897::0::1::::TestTrigger<>BaseTrigger<>::
-::res://src/UI/::1720580679
-ActionList.tscn::PackedScene::261867630275768555::1720580105::0::1::::<><>::uid://6tcknnunbqyv::::res://assets/UI Buttons/Pixel_Button_spin.png
+::res://src/UI/::1720610143
+action_list.gd::GDScript::-1::1720609462::0::1::::<>MarginContainer<>::
+action_list.tscn::PackedScene::261867630275768555::1720609489::0::1::::<><>::res://src/UI/action_list.gd<>uid://6tcknnunbqyv::::res://assets/UI Buttons/Pixel_Button_spin.png
 main_form.gd::GDScript::-1::1719814726::0::1::::<>Control<>::
 main_form.tscn::PackedScene::2644861416702694076::1719814726::0::1::::<><>::res://src/UI/main_form.gd<>uid://ijpt8mm7rvqk::::res://assets/Menu Buttons/Large Buttons/Large Buttons/New game Button.png<>uid://c7o6tglqpo6yt::::res://assets/Menu Buttons/Large Buttons/Colored Large Buttons/New Game  col_Button.png
-ready_fight_form.gd::GDScript::-1::1720581016::0::1::::<>Control<>::
-ready_fight_form.tscn::PackedScene::6233517624309727746::1720581016::0::1::::<><>::uid://sn3te1ks0kww::::res://src/UI/skill_manu.tscn<>res://src/UI/ready_fight_form.gd<>uid://dy36lnamjv3x::::res://src/UI/ActionList.tscn<>uid://c1mylnha2cekb::::res://assets/UI Buttons/Pixel_Button.png
-skill_manu.gd::GDScript::-1::1720581016::0::1::::<>MarginContainer<>::
-skill_manu.tscn::PackedScene::1291970352906732626::1720579948::0::1::::<><>::uid://c1mylnha2cekb::::res://assets/UI Buttons/Pixel_Button.png
+ready_fight_form.gd::GDScript::-1::1720609920::0::1::::<>Control<>::
+ready_fight_form.tscn::PackedScene::6233517624309727746::1720610143::0::1::::<><>::res://src/UI/ready_fight_form.gd<>uid://dy36lnamjv3x::::res://src/UI/action_list.tscn<>uid://c1mylnha2cekb::::res://assets/UI Buttons/Pixel_Button.png<>uid://sn3te1ks0kww::::res://src/UI/skill_menu.tscn
+skill_menu.gd::GDScript::-1::1720610142::0::1::::skillmenu<>MarginContainer<>::
+skill_menu.tscn::PackedScene::1291970352906732626::1720610143::0::1::::<><>::res://src/UI/skill_menu.gd<>uid://c1mylnha2cekb::::res://assets/UI Buttons/Pixel_Button.png
 ui_layer.gd::GDScript::-1::1720172850::0::1::::<>CanvasLayer<>::
-ui_layer.tscn::PackedScene::2257436771227941232::1720576624::0::1::::<><>::res://src/UI/ui_layer.gd<>uid://bdxgqmfx71r5m::::res://src/UI/main_form.tscn<>uid://cu2teh8cydu2e::::res://src/UI/ready_fight_form.tscn
+ui_layer.tscn::PackedScene::2257436771227941232::1720610142::0::1::::<><>::res://src/UI/ui_layer.gd<>uid://bdxgqmfx71r5m::::res://src/UI/main_form.tscn<>uid://cu2teh8cydu2e::::res://src/UI/ready_fight_form.tscn
