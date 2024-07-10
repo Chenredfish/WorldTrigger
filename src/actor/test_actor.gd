@@ -5,7 +5,6 @@ signal show_skill_btn_pressed
 
 @onready var test_actor_animate:AnimatedSprite2D = %test_actor_animate
 
-
 func _init():
 	super()
 	trigger1 = TestTrigger.new()

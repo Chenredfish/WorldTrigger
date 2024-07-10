@@ -1,16 +1,9 @@
-[gd_scene load_steps=13 format=3 uid="uid://cu2teh8cydu2e"]
+[gd_scene load_steps=11 format=3 uid="uid://cu2teh8cydu2e"]
 
 [ext_resource type="PackedScene" uid="uid://sn3te1ks0kww" path="res://src/UI/skill_manu.tscn" id="1_e2sgw"]
 [ext_resource type="Script" path="res://src/UI/ready_fight_form.gd" id="1_lrli3"]
+[ext_resource type="PackedScene" uid="uid://dy36lnamjv3x" path="res://src/UI/action_list.tscn" id="2_2pfrj"]
 [ext_resource type="Texture2D" uid="uid://c1mylnha2cekb" path="res://assets/UI Buttons/Pixel_Button.png" id="2_3c1mp"]
-[ext_resource type="Texture2D" uid="uid://6tcknnunbqyv" path="res://assets/UI Buttons/Pixel_Button_spin.png" id="3_mqiqp"]
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_l7wou"]
-texture = ExtResource("3_mqiqp")
-region_rect = Rect2(164, 324, 24, 56)
-
-[sub_resource type="Theme" id="Theme_rhjyr"]
-Panel/styles/panel = SubResource("StyleBoxTexture_l7wou")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_g1ea6"]
 texture = ExtResource("2_3c1mp")
@@ -62,17 +55,8 @@ grow_vertical = 2
 layout_mode = 2
 theme_override_constants/separation = 880
 
-[node name="MarginContainer" type="MarginContainer" parent="UIContainer/HBoxContainer2"]
-custom_minimum_size = Vector2(104, 464)
+[node name="ActionList" parent="UIContainer/HBoxContainer2" instance=ExtResource("2_2pfrj")]
 layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 0
-theme_override_constants/margin_left = 32
-theme_override_constants/margin_top = 64
-
-[node name="Panel" type="Panel" parent="UIContainer/HBoxContainer2/MarginContainer"]
-layout_mode = 2
-theme = SubResource("Theme_rhjyr")
 
 [node name="MarginContainer3" type="MarginContainer" parent="UIContainer/HBoxContainer2"]
 custom_minimum_size = Vector2(128, 128)

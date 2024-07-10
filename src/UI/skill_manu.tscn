@@ -1,5 +1,6 @@
-[gd_scene load_steps=11 format=3 uid="uid://sn3te1ks0kww"]
+[gd_scene load_steps=12 format=3 uid="uid://sn3te1ks0kww"]
 
+[ext_resource type="Script" path="res://src/UI/skill_manu.gd" id="1_4qk55"]
 [ext_resource type="Texture2D" uid="uid://c1mylnha2cekb" path="res://assets/UI Buttons/Pixel_Button.png" id="1_dfe32"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_w6bu7"]
@@ -24,6 +25,8 @@ texture = ExtResource("1_dfe32")
 region_rect = Rect2(132, 132, 24, 24)
 
 [sub_resource type="Theme" id="Theme_qkqnf"]
+Button/colors/font_color = Color(0, 0, 0, 1)
+Button/font_sizes/font_size = 14
 Button/styles/hover = SubResource("StyleBoxTexture_kjmbk")
 Button/styles/normal = SubResource("StyleBoxTexture_b2ec6")
 Button/styles/pressed = SubResource("StyleBoxTexture_itwh6")
@@ -45,6 +48,7 @@ Button/styles/pressed = SubResource("StyleBoxTexture_qcht8")
 custom_minimum_size = Vector2(592, 128)
 size_flags_horizontal = 8
 size_flags_vertical = 4
+script = ExtResource("1_4qk55")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 2
@@ -53,57 +57,71 @@ theme = SubResource("Theme_0x3v5")
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+[node name="SkillContainer" type="HBoxContainer" parent="MarginContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4
 theme = SubResource("Theme_qkqnf")
 theme_override_constants/separation = 20
 
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/HBoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/SkillContainer"]
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
 size_flags_vertical = 4
 
-[node name="UltButton" type="Button" parent="MarginContainer/HBoxContainer/MarginContainer"]
+[node name="UltButton" type="Button" parent="MarginContainer/SkillContainer/MarginContainer"]
 layout_mode = 2
 theme = SubResource("Theme_jdf10")
+theme_override_colors/font_color = Color(0.0214346, 0.0214346, 0.0214346, 1)
+theme_override_font_sizes/font_size = 20
+text = "Ult"
 
-[node name="MarginContainer2" type="MarginContainer" parent="MarginContainer/HBoxContainer"]
+[node name="MarginContainer2" type="MarginContainer" parent="MarginContainer/SkillContainer"]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 size_flags_vertical = 4
 
-[node name="Button" type="Button" parent="MarginContainer/HBoxContainer/MarginContainer2"]
+[node name="Button1" type="Button" parent="MarginContainer/SkillContainer/MarginContainer2"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.00566115, 0.00566115, 0.00566115, 1)
+text = "Normal
+Punch"
 
-[node name="MarginContainer3" type="MarginContainer" parent="MarginContainer/HBoxContainer"]
+[node name="MarginContainer3" type="MarginContainer" parent="MarginContainer/SkillContainer"]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 size_flags_vertical = 4
 
-[node name="Button" type="Button" parent="MarginContainer/HBoxContainer/MarginContainer3"]
+[node name="Button2" type="Button" parent="MarginContainer/SkillContainer/MarginContainer3"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Defense
+"
 
-[node name="MarginContainer4" type="MarginContainer" parent="MarginContainer/HBoxContainer"]
+[node name="MarginContainer4" type="MarginContainer" parent="MarginContainer/SkillContainer"]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 size_flags_vertical = 4
 
-[node name="Button" type="Button" parent="MarginContainer/HBoxContainer/MarginContainer4"]
+[node name="Button3" type="Button" parent="MarginContainer/SkillContainer/MarginContainer4"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Grenade"
 
-[node name="MarginContainer5" type="MarginContainer" parent="MarginContainer/HBoxContainer"]
+[node name="MarginContainer5" type="MarginContainer" parent="MarginContainer/SkillContainer"]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 size_flags_vertical = 4
 
-[node name="Button" type="Button" parent="MarginContainer/HBoxContainer/MarginContainer5"]
+[node name="Button4" type="Button" parent="MarginContainer/SkillContainer/MarginContainer5"]
 layout_mode = 2
+text = "Healing"
 
-[node name="MarginContainer6" type="MarginContainer" parent="MarginContainer/HBoxContainer"]
+[node name="MarginContainer6" type="MarginContainer" parent="MarginContainer/SkillContainer"]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 size_flags_vertical = 4
 
-[node name="Button" type="Button" parent="MarginContainer/HBoxContainer/MarginContainer6"]
+[node name="Button5" type="Button" parent="MarginContainer/SkillContainer/MarginContainer6"]
 layout_mode = 2
+text = "Move"

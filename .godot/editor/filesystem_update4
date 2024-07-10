@@ -6,5 +6,6 @@ res://src/UI/ui_layer.tscn
 res://src/UI/ready_fight_form.tscn
 res://src/UI/skill_manu.tscn
 res://src/UI/ready_fight_form.gd
-res://src/UI/ui_layer.gd
-res://addons/state_machine/state/s_ready_main_ui.gd
+res://src/UI/margin_container.tscn
+res://src/UI/skill_manu.gd
+res://src/actor/test_actor.gd
