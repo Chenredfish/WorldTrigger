@@ -1,8 +1,9 @@
 extends Control
 
-@onready var panel = $UIContainer/HBoxContainer2/ActionList/Panel
+@onready var action_list_visable = $UIContainer/HBoxContainer2/ActionList/Panel
 @onready var skill_container = $UIContainer/SkillContainer
 @onready var skill_menu = $UIContainer/SkillContainer/SkillMenu
+@onready var action_list = $UIContainer/HBoxContainer2/ActionList
 
 signal add_skill(action : Button)
 
@@ -11,11 +12,12 @@ func _ready():
 
 func show_actor_skill():
 	skill_container.show()
-	panel.show()
+	action_list_visable.show()
 
 func hide_actor_skill():
 	skill_container.hide()
-	panel.hide()
+	action_list_visable.hide()
 
 func panel_add_skill(action : Button):
 	print(action.text)
+	action_list.add_action(action)

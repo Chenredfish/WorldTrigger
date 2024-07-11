@@ -25,7 +25,7 @@ func hide_ready_fight_form():
 	ready_fight_form.hide_actor_skill()
 	
 func get_ready_fight_form():
-	return ready_fight_form.panel.is_visible()
+	return ready_fight_form.action_list_visable.is_visible()
 
 #以下都是按鈕觸發
 

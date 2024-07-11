@@ -1,4 +1,6 @@
 MarginContainer
+Button
+VBoxContainer
 Panel
 Control
 TileMap
@@ -7,8 +9,6 @@ AnimationPlayer
 TouchScreenButton
 HBoxContainer
 GridContainer
-Button
 AnimatedSprite2D
 Node2D
 Sprite2D
-ColorRect

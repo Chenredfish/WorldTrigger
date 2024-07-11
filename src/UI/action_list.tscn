@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://dy36lnamjv3x"]
+[gd_scene load_steps=9 format=3 uid="uid://dy36lnamjv3x"]
 
 [ext_resource type="Script" path="res://src/UI/action_list.gd" id="1_jug6j"]
 [ext_resource type="Texture2D" uid="uid://6tcknnunbqyv" path="res://assets/UI Buttons/Pixel_Button_spin.png" id="1_pjsyp"]
+[ext_resource type="Texture2D" uid="uid://c1mylnha2cekb" path="res://assets/UI Buttons/Pixel_Button.png" id="3_7o74p"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_l7wou"]
 texture = ExtResource("1_pjsyp")
@@ -9,6 +10,19 @@ region_rect = Rect2(164, 324, 24, 56)
 
 [sub_resource type="Theme" id="Theme_rhjyr"]
 Panel/styles/panel = SubResource("StyleBoxTexture_l7wou")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cwql0"]
+texture = ExtResource("3_7o74p")
+region_rect = Rect2(101, 1, 22, 24)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jc0mr"]
+texture = ExtResource("3_7o74p")
+region_rect = Rect2(132, 4, 24, 24)
+
+[sub_resource type="Theme" id="Theme_ujnt5"]
+Button/styles/hover = SubResource("StyleBoxTexture_cwql0")
+Button/styles/normal = SubResource("StyleBoxTexture_cwql0")
+Button/styles/pressed = SubResource("StyleBoxTexture_jc0mr")
 
 [node name="ActionList" type="MarginContainer"]
 custom_minimum_size = Vector2(104, 464)
@@ -22,10 +36,21 @@ script = ExtResource("1_jug6j")
 layout_mode = 2
 theme = SubResource("Theme_rhjyr")
 
-[node name="Actions" type="MarginContainer" parent="Panel"]
+[node name="Actions" type="VBoxContainer" parent="Panel"]
 layout_mode = 0
 offset_left = 12.0
-offset_top = 36.0
+offset_top = 28.0
 offset_right = 60.0
 offset_bottom = 372.0
+
+[node name="ShowButtonContainer" type="MarginContainer" parent="Panel/Actions"]
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 2
 theme_override_constants/margin_left = 0
+
+[node name="ShowButton" type="Button" parent="Panel/Actions/ShowButtonContainer"]
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 2
+theme = SubResource("Theme_ujnt5")
+theme_override_font_sizes/font_size = 10
+text = "Attack"
