@@ -4,10 +4,10 @@ extends Control
 @onready var skill_container = $UIContainer/SkillContainer
 @onready var skill_menu = $UIContainer/SkillContainer/SkillMenu
 
-var SkillMenu : skillmenu
+signal add_skill(action : Button)
 
 func _ready():
-	SkillMenu.add_skill.connect(self.panel_add_skill)
+	skill_menu.add_skill.connect(panel_add_skill)
 
 func show_actor_skill():
 	skill_container.show()
@@ -18,4 +18,4 @@ func hide_actor_skill():
 	panel.hide()
 
 func panel_add_skill(action : Button):
-	pass
+	print(action.text)

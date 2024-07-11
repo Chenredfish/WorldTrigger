@@ -11,13 +11,27 @@ class_name skillmenu
 signal add_skill(action : Button)
 
 func _ready():
-	#ult_button.pressed.connect(skill_btn_pressed(ult_button))
-	#button_1.pressed.connect(skill_btn_pressed(button_1))
-	#button_2.pressed.connect(skill_btn_pressed(button_2))
-	#button_3.pressed.connect(skill_btn_pressed(button_3))
-	#button_4.pressed.connect(skill_btn_pressed(button_4))
-	#button_5.pressed.connect(skill_btn_pressed(button_5))
-	pass
+	ult_button.pressed.connect(ult_skill_btn_pressed)
+	button_1.pressed.connect(button1_skill_btn_pressed)
+	button_2.pressed.connect(button2_skill_btn_pressed)
+	button_3.pressed.connect(button3_skill_btn_pressed)
+	button_4.pressed.connect(button4_skill_btn_pressed)
+	button_5.pressed.connect(button5_skill_btn_pressed)
 
-func skill_btn_pressed(action : Button):
-	add_skill.emit(action)
+func ult_skill_btn_pressed():
+	add_skill.emit(ult_button)
+
+func button1_skill_btn_pressed():
+	add_skill.emit(button_1)
+
+func button2_skill_btn_pressed():
+	add_skill.emit(button_2)
+
+func button3_skill_btn_pressed():
+	add_skill.emit(button_3)
+
+func button4_skill_btn_pressed():
+	add_skill.emit(button_4)
+
+func button5_skill_btn_pressed():
+	add_skill.emit(button_5)

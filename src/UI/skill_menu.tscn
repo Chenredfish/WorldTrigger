@@ -69,7 +69,7 @@ custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
 size_flags_vertical = 4
 
-[node name="UltButton" type="Button" parent="MarginContainer/SkillContainer/MarginContainer"]
+[node name="UltButton" type="Button" parent="MarginContainer/SkillContainer/MarginContainer" groups=["Buttons"]]
 layout_mode = 2
 theme = SubResource("Theme_jdf10")
 theme_override_colors/font_color = Color(0.0214346, 0.0214346, 0.0214346, 1)
@@ -81,7 +81,7 @@ custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 size_flags_vertical = 4
 
-[node name="Button1" type="Button" parent="MarginContainer/SkillContainer/MarginContainer2"]
+[node name="Button1" type="Button" parent="MarginContainer/SkillContainer/MarginContainer2" groups=["Buttons"]]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.00566115, 0.00566115, 0.00566115, 1)
 text = "Normal
@@ -92,18 +92,17 @@ custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 size_flags_vertical = 4
 
-[node name="Button2" type="Button" parent="MarginContainer/SkillContainer/MarginContainer3"]
+[node name="Button2" type="Button" parent="MarginContainer/SkillContainer/MarginContainer3" groups=["Buttons"]]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "Defense
-"
+text = "Defense"
 
 [node name="MarginContainer4" type="MarginContainer" parent="MarginContainer/SkillContainer"]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 size_flags_vertical = 4
 
-[node name="Button3" type="Button" parent="MarginContainer/SkillContainer/MarginContainer4"]
+[node name="Button3" type="Button" parent="MarginContainer/SkillContainer/MarginContainer4" groups=["Buttons"]]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Grenade"
@@ -113,7 +112,7 @@ custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 size_flags_vertical = 4
 
-[node name="Button4" type="Button" parent="MarginContainer/SkillContainer/MarginContainer5"]
+[node name="Button4" type="Button" parent="MarginContainer/SkillContainer/MarginContainer5" groups=["Buttons"]]
 layout_mode = 2
 text = "Healing"
 
@@ -122,6 +121,6 @@ custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 size_flags_vertical = 4
 
-[node name="Button5" type="Button" parent="MarginContainer/SkillContainer/MarginContainer6"]
+[node name="Button5" type="Button" parent="MarginContainer/SkillContainer/MarginContainer6" groups=["Buttons"]]
 layout_mode = 2
 text = "Move"
