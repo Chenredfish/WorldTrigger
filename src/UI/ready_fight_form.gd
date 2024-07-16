@@ -19,5 +19,4 @@ func hide_actor_skill():
 	action_list_visable.hide()
 
 func panel_add_skill(action : Button):
-	print(action.text)
 	action_list.add_action(action)

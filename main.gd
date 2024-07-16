@@ -7,7 +7,7 @@ extends Node2D
 #地圖
 @export var TEST_MAP = preload("res://src/map/test_map.tscn")
 
-var current_map:TileMap
+var current_map:TileMap		
 var mouse_position_tile_map:Vector2i
 
 # Called when the node enters the scene tree for the first time.
