@@ -31,7 +31,7 @@ func _process(delta):
 
 func get_actor_map_position():
 	if actor:
-		return self.local_to_map(actor.get_position())
+		return self.local_to_map(actor.get_position())+Vector2i(1,1) ####大問題!!!
 
 func _on_show_skill_btn_pressed():
 	actor.add_behavior(NormalMove.new(Vector2i(5,4)))  #準備階段輸入

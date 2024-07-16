@@ -1,11 +1,13 @@
 res://main.tscn
 res://src/game_state_machine.gd
 res://main.gd
-res://src/UI/action_list.gd
-res://src/UI/ready_fight_form.gd
 res://src/UI/ui_layer.tscn
 res://src/actor/test_actor.tscn
 res://src/UI/ready_fight_form.tscn
 res://src/UI/action_list.tscn
 res://src/UI/skill_menu.tscn
+res://src/UI/ready_fight_form.gd
+res://src/map/test_map.tscn
+res://addons/state_machine/state/s_playing_init.gd
 res://src/UI/ui_layer.gd
+res://src/map/test_map.gd

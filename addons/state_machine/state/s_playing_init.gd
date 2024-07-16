@@ -16,6 +16,8 @@ func enter(_msg:Dictionary = {}):
 func update(delta:float):
 	
 	_update_mouse_frame()
+	if Input.is_action_just_pressed("left_mouse_pressed"):
+		agent.ui_layer.left_pressed_mouse(agent.get_mouse_position_tile_map(), agent.get_map_actor_map_position())
 	
 
 func _update_mouse_frame():

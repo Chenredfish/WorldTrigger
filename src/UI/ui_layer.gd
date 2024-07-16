@@ -29,6 +29,9 @@ func get_ready_fight_form():
 
 #以下都是按鈕觸發
 
+#按下左鍵
+func left_pressed_mouse(mouse_site:Vector2i, actor_site:Vector2i):
+	ready_fight_form.left_pressed_mouse(mouse_site, actor_site)
 
 func _on_main_form_btn_new_game_pressed():
 	btn_new_game_pressed.emit()
