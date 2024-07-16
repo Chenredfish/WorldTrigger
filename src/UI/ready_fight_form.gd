@@ -22,6 +22,7 @@ func hide_actor_skill():
 	action_list_visable.hide()
 
 func panel_add_skill(action : Button):
+<<<<<<< HEAD
 	
 	#選擇移動到的位置
 	hide_actor_skill()
@@ -29,6 +30,8 @@ func panel_add_skill(action : Button):
 	show_actor_skill()
 	
 	print(action.text)
+=======
+>>>>>>> 99dd76b70fc2b874587fc8aa1a8d02ce7cad0822
 	action_list.add_action(action)
 
 func emit_choose_move_site(mouse_site:Vector2i, actor_site:Vector2i):

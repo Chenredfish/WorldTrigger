@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://dy36lnamjv3x"]
+[gd_scene load_steps=10 format=3 uid="uid://dy36lnamjv3x"]
 
 [ext_resource type="Script" path="res://src/UI/action_list.gd" id="1_jug6j"]
 [ext_resource type="Texture2D" uid="uid://6tcknnunbqyv" path="res://assets/UI Buttons/Pixel_Button_spin.png" id="1_pjsyp"]
 [ext_resource type="Texture2D" uid="uid://c1mylnha2cekb" path="res://assets/UI Buttons/Pixel_Button.png" id="3_7o74p"]
+[ext_resource type="Script" path="res://src/UI/action_list_Button.gd" id="4_kyrwg"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_l7wou"]
 texture = ExtResource("1_pjsyp")
@@ -47,6 +48,7 @@ offset_bottom = 372.0
 custom_minimum_size = Vector2(48, 48)
 layout_mode = 2
 theme_override_constants/margin_left = 0
+script = ExtResource("4_kyrwg")
 
 [node name="ShowButton" type="Button" parent="Panel/Actions/ShowButtonContainer"]
 custom_minimum_size = Vector2(48, 48)
