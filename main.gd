@@ -21,16 +21,7 @@ func _process(delta):
 
 func load_map():
 	current_map = TEST_MAP.instantiate()
-	self.add_child(current_map)
-	
-	current_map.show_skill_btn_pressed.connect(
-		func ():
-			if ui_layer.get_ready_fight_form():
-				ui_layer.hide_ready_fight_form()
-			else:
-				ui_layer.show_ready_fight_form()
-	)
-	
+	self.add_child(current_map)	
 	
 func get_mouse_position_tile_map():
 	if current_map:
@@ -44,3 +35,10 @@ func get_map_actor_map_position():
 
 func _on_ui_layer_btn_new_game_pressed():
 	game_state_machine.set_value('is_new_game', true)
+
+func _on_ui_layer_actor_add_move_behavior(site):
+	if current_map:
+		current_map.actor_add_move_behavior(site)
+
+func _on_ui_layer_start_fight_button_pressed():
+	game_state_machine.set_value('is_fighting', true)

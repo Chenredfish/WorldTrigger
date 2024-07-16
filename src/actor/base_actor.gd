@@ -33,8 +33,14 @@ func take_behavior():
 	if behavior.kind["attack"]:
 		pass
 		
-func remove_behaviors():
+func remove_behavior():
 	behaviors.remove_at(0)
+
+func get_behaviors_size():
+	return behaviors.size()
+	
+func get_current_health()->int:
+	return current_health
 
 func emit_tilemap_move_self(input_aim_site:Vector2i):
 	move_actor.emit(input_aim_site, self)

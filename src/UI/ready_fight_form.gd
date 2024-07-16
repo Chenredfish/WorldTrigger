@@ -6,7 +6,9 @@ extends Control
 @onready var action_list = $UIContainer/HBoxContainer2/ActionList
 
 signal add_skill(action : Button)
+signal actor_add_move_behavior(site : Vector2i)
 signal choose_move_site
+signal start_fight_button_pressed
 
 func _ready():
 	skill_menu.add_skill.connect(panel_add_skill)
@@ -21,6 +23,7 @@ func hide_actor_skill():
 
 func panel_add_skill(action : Button):
 	
+	#選擇移動到的位置
 	hide_actor_skill()
 	await choose_move_site
 	show_actor_skill()
@@ -30,7 +33,15 @@ func panel_add_skill(action : Button):
 
 func emit_choose_move_site(mouse_site:Vector2i, actor_site:Vector2i):
 	if (mouse_site - actor_site).length_squared() == 1:
+		#技能介面的恢復
 		choose_move_site.emit()
+		
+		#要求角色增加行動
+		actor_add_move_behavior.emit(mouse_site)
 
 func left_pressed_mouse(mouse_site:Vector2i, actor_site:Vector2i):
 	emit_choose_move_site(mouse_site, actor_site)
+
+
+func _on_start_button_pressed():
+	start_fight_button_pressed.emit()

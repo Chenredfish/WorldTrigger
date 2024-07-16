@@ -16,11 +16,11 @@ func update(delta):
 
 	if is_new_game:
 		transform_to(StateEnum.GAME_STATE_TYPE.PLAYING_INIT)
-		agent.ui_layer.hide_main_form()
-		agent.ui_layer.start_main_form()
+		
 		
 			
 func exit():
+	agent.ui_layer.hide_main_form()
+	
 	is_new_game = false
 	state_machine.set_value('is_new_game', is_new_game)
-		

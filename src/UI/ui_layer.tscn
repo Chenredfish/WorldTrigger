@@ -16,3 +16,5 @@ unique_name_in_owner = true
 visible = false
 
 [connection signal="btn_new_game_pressed" from="MainForm" to="." method="_on_main_form_btn_new_game_pressed"]
+[connection signal="actor_add_move_behavior" from="ReadyFightForm" to="." method="_on_ready_fight_form_actor_add_move_behavior"]
+[connection signal="start_fight_button_pressed" from="ReadyFightForm" to="." method="_on_ready_fight_form_start_fight_button_pressed"]

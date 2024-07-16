@@ -34,9 +34,7 @@ func get_actor_map_position():
 		return self.local_to_map(actor.get_position())+Vector2i(1,1) ####大問題!!!
 
 func _on_show_skill_btn_pressed():
-	actor.add_behavior(NormalMove.new(Vector2i(5,4)))  #準備階段輸入
-	actor.take_behavior() #執行階段
-	actor.remove_behaviors() #執行階段
+	
 	
 	show_skill_btn_pressed.emit()
 
@@ -59,3 +57,12 @@ func add_role(preload_role, position:Vector2i):
 	role.set_position(Vector2(self.map_to_local(position)))
 	
 	return role
+
+func actor_add_move_behavior(aim_site:Vector2i):
+	actor.add_behavior(NormalMove.new(aim_site))
+
+func actor_take_behavior():
+	actor.take_behavior() #執行階段
+	
+func actor_remove_behavior():
+	actor.remove_behavior() #執行階段

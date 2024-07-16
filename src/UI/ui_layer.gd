@@ -4,6 +4,8 @@ extends CanvasLayer
 @onready var ready_fight_form = %ReadyFightForm
 
 signal btn_new_game_pressed
+signal actor_add_move_behavior(site:Vector2i)
+signal start_fight_button_pressed
 	
 #開關UI
 func start_main_form():
@@ -35,3 +37,10 @@ func left_pressed_mouse(mouse_site:Vector2i, actor_site:Vector2i):
 
 func _on_main_form_btn_new_game_pressed():
 	btn_new_game_pressed.emit()
+
+
+func _on_ready_fight_form_actor_add_move_behavior(site):
+	actor_add_move_behavior.emit(site)
+
+func _on_ready_fight_form_start_fight_button_pressed():
+	start_fight_button_pressed.emit()
