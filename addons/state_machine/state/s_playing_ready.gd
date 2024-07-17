@@ -40,7 +40,7 @@ func exit():
 	state_machine.set_value('is_fighting', is_fighting)
 	agent.ui_layer.hide_ready_fight_form()
 
-
+	mouse_frame.queue_free()
 
 
 

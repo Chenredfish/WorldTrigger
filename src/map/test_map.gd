@@ -39,8 +39,8 @@ func _on_show_skill_btn_pressed():
 	show_skill_btn_pressed.emit()
 
 func _move_actor(aim_site:Vector2i, moved_actor:Node2D):
+	aim_site-=Vector2i(1,1) #####大問題產生的問題
 	moved_actor.play_run_animate()
-	
 	while self.map_to_local(aim_site) != moved_actor.get_position():
 		if self.map_to_local(aim_site).x > moved_actor.get_position().x:
 			moved_actor.position.x+=2
@@ -48,6 +48,7 @@ func _move_actor(aim_site:Vector2i, moved_actor:Node2D):
 		else:
 			moved_actor.position.x-=2
 			moved_actor.turn_left()
+			print("_move_actor")
 			
 		await get_tree().create_timer(0.1).timeout
 

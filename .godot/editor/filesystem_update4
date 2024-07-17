@@ -10,3 +10,4 @@ res://src/map/test_map.tscn
 res://src/UI/ui_layer.gd
 res://src/UI/ready_fight_form.tscn
 res://src/UI/ready_fight_form.gd
+res://src/map/test_map.gd
