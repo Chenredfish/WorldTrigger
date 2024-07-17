@@ -1,25 +1,12 @@
 res://main.tscn
 res://src/game_state_machine.gd
 res://main.gd
-<<<<<<< HEAD
-=======
-res://src/UI/action_list.gd
-res://src/UI/ui_layer.tscn
-res://src/actor/test_actor.tscn
->>>>>>> 99dd76b70fc2b874587fc8aa1a8d02ce7cad0822
-res://src/UI/ready_fight_form.tscn
-res://src/UI/skill_menu.tscn
-<<<<<<< HEAD
-res://src/map/test_map.tscn
-res://src/UI/ui_layer.tscn
-res://src/UI/ready_fight_form.gd
-res://src/UI/ui_layer.gd
-res://src/map/test_map.gd
-res://src/actor/base_actor.gd
-res://addons/state_machine/state/s_playing_init.gd
-res://addons/state_machine/state/s_ready_main_ui.gd
+res://addons/state_machine/state/s_playing_fight.gd
 res://addons/state_machine/state/s_playing_ready.gd
+res://addons/state_machine/state/s_playing_init.gd
+res://src/UI/ui_layer.tscn
 res://src/actor/test_actor.tscn
-=======
-res://src/UI/action_list_Button.gd
->>>>>>> 99dd76b70fc2b874587fc8aa1a8d02ce7cad0822
+res://src/map/test_map.tscn
+res://src/UI/ui_layer.gd
+res://src/UI/ready_fight_form.tscn
+res://src/UI/ready_fight_form.gd
