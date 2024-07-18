@@ -7,13 +7,16 @@ var is_end_behavior:bool = false
 func enter(_msg:Dictionary = {}):
 	print("s_Playing_Fight")
 	while is_end_game==false and is_end_behavior==false:
+		print(agent.current_map.actor.get_behaviors_size())
 		if agent.current_map.actor.get_behaviors_size() <=0:
 			if agent.current_map.actor.get_current_health() <=0:
 				is_end_game = true
 				print("game")
+				break
 			else:
 				is_end_behavior = true
 				print("beh")
+				break
 		else:
 			actor_take_behavior()
 			actor_remove_behavior()
