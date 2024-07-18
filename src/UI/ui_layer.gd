@@ -6,6 +6,7 @@ extends CanvasLayer
 signal btn_new_game_pressed
 signal actor_add_move_behavior(site:Vector2i)
 signal start_fight_button_pressed
+signal add_move_reflection(site:Vector2i)
 	
 #開關UI
 func start_main_form():
@@ -42,5 +43,9 @@ func _on_ready_fight_form_start_fight_button_pressed():
 	start_fight_button_pressed.emit()
 
 
-func _on_ready_fight_form_actor_add_move_behavior(site):
+func _on_ready_fight_form_actor_add_move_behavior(site:Vector2i):
 	actor_add_move_behavior.emit(site)
+
+
+func _on_ready_fight_form_add_move_reflection(site:Vector2i):
+	add_move_reflection.emit(site)

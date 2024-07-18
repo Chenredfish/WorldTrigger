@@ -7,9 +7,9 @@ var mouse_frame:Node2D
 var is_fighting:bool = false
 
 
-
-
 func enter(_msg:Dictionary={}):
+	
+	print("s_Playing_Ready")
 	
 	agent.current_map.show_skill_btn_pressed.connect(show_skill_btn_pressed)
 	
@@ -23,7 +23,14 @@ func update(delta):
 	_update_mouse_frame()
 	
 	if Input.is_action_just_pressed("left_mouse_pressed"):
-		agent.ui_layer.left_pressed_mouse(agent.get_mouse_position_tile_map(), agent.get_map_actor_map_position())
+		var old_position
+		
+		if agent.current_map.has_actor_reflection():
+			old_position = agent.get_map_reflection_position()
+		else:
+			old_position = agent.get_map_actor_map_position()
+			
+		agent.ui_layer.left_pressed_mouse(agent.get_mouse_position_tile_map(), old_position)
 	
 	if state_machine.has_value('is_fighting'): #更新狀態
 		is_fighting = state_machine.get_value('is_fighting')

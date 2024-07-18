@@ -9,7 +9,6 @@ func _init():
 	super()
 	trigger1 = TestTrigger.new()
 
-
 #func emit_tilemap_move_self(input_aim_site:Vector2i):
 	#super(input_aim_site)
 	
