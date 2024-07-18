@@ -17,7 +17,6 @@ func enter(_msg:Dictionary={}):
 	agent.add_child(mouse_frame)
 	_update_mouse_frame()
 
-	
 func update(delta):
 	_update_mouse_frame()
 	
@@ -36,7 +35,6 @@ func update(delta):
 	if is_fighting:
 		print("is_fight = true")
 		transform_to(StateEnum.GAME_STATE_TYPE.PLAYING_FIGHT)
-	
 	
 	
 func exit():

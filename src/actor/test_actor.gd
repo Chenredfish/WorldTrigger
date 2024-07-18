@@ -6,8 +6,13 @@ signal show_skill_btn_pressed
 @onready var test_actor_animate:AnimatedSprite2D = %test_actor_animate
 
 func _init():
-	super()
+	attack_amount = 20
+	behavior_amount = 7
+	max_health = 3000
+	avoid = 5
 	trigger1 = TestTrigger.new()
+	
+	super()
 
 #func emit_tilemap_move_self(input_aim_site:Vector2i):
 	#super(input_aim_site)

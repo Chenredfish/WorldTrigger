@@ -22,6 +22,8 @@ func _ready():
 	actor = add_role(TEST_ACTOR, actor_start_position)
 	actor.show_skill_btn_pressed.connect(_on_show_skill_btn_pressed)
 	actor.move_actor.connect(_move_actor)
+	self.add_child(actor)
+	
 
 	#新增敵人
 	enemy = add_role(SANDBAG, enemy_start_position)

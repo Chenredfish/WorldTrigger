@@ -4,3 +4,6 @@ res://main.gd
 res://src/map/test_map.tscn
 res://src/actor/test_actor.tscn
 res://addons/state_machine/state/s_playing_ready.gd
+res://src/map/test_map.gd
+res://src/actor/test_actor.gd
+res://addons/state_machine/state/s_playing_fight.gd
