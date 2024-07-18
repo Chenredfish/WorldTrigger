@@ -15,6 +15,7 @@ var actor:TestActor
 var enemy:Sandbag
 var actor_reflections:Array[TestActorRollReflection]
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	
@@ -57,11 +58,12 @@ func _move_actor(aim_site:Vector2i, moved_actor:Node2D):
 		
 		await get_tree().create_timer(0.1).timeout
 		
-	print(aim_site)
-	move_over.emit()	
+	#print(aim_site)
+	move_over.emit()
 	
-	actor_reflections[0].queue_free()
-	actor_reflections.remove_at(0)
+	if actor_reflections[0]:
+		actor_reflections[0].queue_free()
+		actor_reflections.remove_at(0)
 
 func add_role(preload_role, position:Vector2i):
 	var role:Node2D
