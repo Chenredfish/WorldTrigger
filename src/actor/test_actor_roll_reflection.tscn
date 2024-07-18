@@ -1,0 +1,79 @@
+[gd_scene load_steps=12 format=3 uid="uid://cbfidquosbcmh"]
+
+[ext_resource type="Texture2D" uid="uid://2ejijx5xdofs" path="res://assets/brackeys_platformer_assets/sprites/knight.png" id="1_7yexx"]
+[ext_resource type="Script" path="res://src/actor/test_actor_roll_reflection.gd" id="1_f51bk"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vu340"]
+atlas = ExtResource("1_7yexx")
+region = Rect2(0, 160, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_at76u"]
+atlas = ExtResource("1_7yexx")
+region = Rect2(32, 160, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_71s5t"]
+atlas = ExtResource("1_7yexx")
+region = Rect2(64, 160, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t1hfy"]
+atlas = ExtResource("1_7yexx")
+region = Rect2(96, 160, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ncb2e"]
+atlas = ExtResource("1_7yexx")
+region = Rect2(128, 160, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jc2f7"]
+atlas = ExtResource("1_7yexx")
+region = Rect2(160, 160, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c02l6"]
+atlas = ExtResource("1_7yexx")
+region = Rect2(192, 160, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0xupa"]
+atlas = ExtResource("1_7yexx")
+region = Rect2(224, 160, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xaw32"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vu340")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_at76u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_71s5t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t1hfy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ncb2e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jc2f7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c02l6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0xupa")
+}],
+"loop": true,
+"name": &"roll",
+"speed": 5.0
+}]
+
+[node name="TestActorRollReflection" type="Node2D"]
+script = ExtResource("1_f51bk")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+self_modulate = Color(1, 1, 1, 0.635294)
+position = Vector2(0, -4)
+sprite_frames = SubResource("SpriteFrames_xaw32")
+animation = &"roll"
+autoplay = "roll"
+frame_progress = 0.0151851

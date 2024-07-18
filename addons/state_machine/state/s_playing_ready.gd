@@ -16,8 +16,7 @@ func enter(_msg:Dictionary={}):
 	mouse_frame = MOUSE_FRAME.instantiate()
 	agent.add_child(mouse_frame)
 	_update_mouse_frame()
-	
-	
+
 	
 func update(delta):
 	_update_mouse_frame()
