@@ -36,3 +36,9 @@ func add_action(action : Button):
 				
 		)
 		actions_num += 1
+
+func remove_all_action():
+	while current_actions:
+		current_actions[0].queue_free()
+		current_actions.remove_at(0)
+		actions_num -= 1

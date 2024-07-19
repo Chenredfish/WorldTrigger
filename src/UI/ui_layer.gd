@@ -31,6 +31,10 @@ func hide_ready_fight_form():
 func get_ready_fight_form():
 	return ready_fight_form.action_list_visable.is_visible()
 
+#刪除所有行動展示
+func remove_all_action():
+	ready_fight_form.remove_all_action()
+
 #以下都是按鈕觸發
 
 #按下左鍵

@@ -34,6 +34,7 @@ func update(delta):
 func exit():
 	is_end_behavior = false
 	is_end_game = false
+	agent.ui_layer.remove_all_action()
 
 
 func actor_take_behavior():

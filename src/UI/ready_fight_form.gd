@@ -54,6 +54,9 @@ func emit_choose_move_site(mouse_site:Vector2i, actor_site:Vector2i):
 func left_pressed_mouse(mouse_site:Vector2i, actor_site:Vector2i):
 	emit_choose_move_site(mouse_site, actor_site)
 
+func remove_all_action():
+	action_list.remove_all_action()
+
 
 func _on_start_button_pressed():
 	start_fight_button_pressed.emit()
