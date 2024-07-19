@@ -22,8 +22,9 @@ func add_action(action : Button):
 		new_action.text = action.text
 		new_action.add_theme_font_size_override("font_size", 11)
 		new_action_container.add_child(new_action)
-		new_action.pressed.connect(func():
-			new_action_container.action_cancel()
-			actions_num -= 1
+		new_action.pressed.connect(
+			func():
+				new_action_container.action_cancel()
+				actions_num -= 1
 		)
 		actions_num += 1
