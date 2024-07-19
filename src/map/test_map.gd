@@ -39,7 +39,7 @@ func get_actor_map_position():
 		return self.local_to_map(actor.get_position())+Vector2i(1,1) ####大問題!!!
 		
 func get_reflection_map_position():
-	if actor_reflections:
+	if actor_reflections[-1]:
 		return self.local_to_map(actor_reflections[-1].get_position())
 
 func _on_show_skill_btn_pressed():
@@ -61,9 +61,7 @@ func _move_actor(aim_site:Vector2i, moved_actor:Node2D):
 	#print(aim_site)
 	move_over.emit()
 	
-	if actor_reflections[0]:
-		actor_reflections[0].queue_free()
-		actor_reflections.remove_at(0)
+	remove_move_reflection(0)
 
 func add_role(preload_role, position:Vector2i):
 	var role:Node2D
@@ -76,6 +74,15 @@ func add_role(preload_role, position:Vector2i):
 func add_move_reflection(site:Vector2i):
 	actor_reflections.append(add_role(TEST_ACTOR_ROLL_REFLECTION, site))
 	self.add_child(actor_reflections[-1])
+	
+func remove_move_reflection(remove_number:int):
+	if actor_reflections[remove_number]:
+		actor_reflections[remove_number].queue_free()
+		if remove_number == -1:
+			actor_reflections.resize(actor_reflections.size() - 1)
+		else:
+			actor_reflections.remove_at(remove_number)
+		print(actor_reflections.size())
 
 func actor_add_move_behavior(aim_site:Vector2i):
 	actor.add_behavior(NormalMove.new(aim_site))

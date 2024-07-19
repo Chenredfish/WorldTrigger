@@ -11,18 +11,18 @@ func enter(_msg:Dictionary = {}):
 		if agent.current_map.actor.get_behaviors_size() <=0:
 			if agent.current_map.actor.get_current_health() <=0:
 				is_end_game = true
-				print("game")
+				#print("game")
 				break
 			else:
 				is_end_behavior = true
-				print("beh")
+				#print("beh")
 				break
 		else:
 			actor_take_behavior()
 			actor_remove_behavior()
-			print("a")
+			#print("a")
 		await agent.current_map.move_over
-		print("b")
+		#print("b")
 
 
 func update(delta):

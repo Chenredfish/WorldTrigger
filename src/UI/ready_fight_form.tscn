@@ -95,4 +95,5 @@ layout_mode = 2
 theme = SubResource("Theme_7d07b")
 theme_override_font_sizes/font_size = 30
 
+[connection signal="remove_action" from="UIContainer/HBoxContainer2/ActionList" to="." method="_on_action_list_remove_action"]
 [connection signal="pressed" from="UIContainer/SkillContainer/MarginContainer/StartButton" to="." method="_on_start_button_pressed"]

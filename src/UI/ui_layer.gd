@@ -7,6 +7,7 @@ signal btn_new_game_pressed
 signal actor_add_move_behavior(site:Vector2i)
 signal start_fight_button_pressed
 signal add_move_reflection(site:Vector2i)
+signal remove_action
 	
 #開關UI
 func start_main_form():
@@ -49,3 +50,7 @@ func _on_ready_fight_form_actor_add_move_behavior(site:Vector2i):
 
 func _on_ready_fight_form_add_move_reflection(site:Vector2i):
 	add_move_reflection.emit(site)
+
+
+func _on_ready_fight_form_remove_action():
+	remove_action.emit()

@@ -10,6 +10,7 @@ signal actor_add_move_behavior(site : Vector2i)
 signal choose_move_site
 signal add_move_reflection(site:Vector2i)
 signal start_fight_button_pressed
+signal remove_action
 
 var is_choose_move_site:bool = false
 
@@ -56,3 +57,7 @@ func left_pressed_mouse(mouse_site:Vector2i, actor_site:Vector2i):
 
 func _on_start_button_pressed():
 	start_fight_button_pressed.emit()
+
+
+func _on_action_list_remove_action():
+	remove_action.emit()

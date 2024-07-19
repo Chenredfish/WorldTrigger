@@ -11,3 +11,6 @@ res://src/UI/ready_fight_form.gd
 res://src/UI/skill_menu.tscn
 res://src/UI/skill_menu.gd
 res://src/UI/action_list_Button.gd
+res://src/UI/ui_layer.gd
+res://src/map/test_map.gd
+res://addons/state_machine/state/s_playing_fight.gd

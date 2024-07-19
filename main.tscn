@@ -16,4 +16,5 @@ unique_name_in_owner = true
 
 [connection signal="actor_add_move_behavior" from="UILayer" to="." method="_on_ui_layer_actor_add_move_behavior"]
 [connection signal="btn_new_game_pressed" from="UILayer" to="." method="_on_ui_layer_btn_new_game_pressed"]
+[connection signal="remove_action" from="UILayer" to="." method="_on_ui_layer_remove_action"]
 [connection signal="start_fight_button_pressed" from="UILayer" to="." method="_on_ui_layer_start_fight_button_pressed"]
