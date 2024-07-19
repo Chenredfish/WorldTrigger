@@ -14,3 +14,4 @@ res://src/UI/action_list_Button.gd
 res://src/UI/ui_layer.gd
 res://src/map/test_map.gd
 res://addons/state_machine/state/s_playing_fight.gd
+res://src/actor/base_actor.gd

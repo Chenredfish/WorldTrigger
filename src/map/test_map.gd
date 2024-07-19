@@ -82,7 +82,6 @@ func remove_move_reflection(remove_number:int):
 			actor_reflections.resize(actor_reflections.size() - 1)
 		else:
 			actor_reflections.remove_at(remove_number)
-		print(actor_reflections.size())
 
 func actor_add_move_behavior(aim_site:Vector2i):
 	actor.add_behavior(NormalMove.new(aim_site))
@@ -92,6 +91,9 @@ func actor_take_behavior():
 	
 func actor_remove_behavior():
 	actor.remove_behavior() #執行階段
+	
+func actor_remove_top_behavior(): #返回行動
+	actor.remove_top_behavior()
 
 func has_actor_reflection()->bool:
 	if actor_reflections:

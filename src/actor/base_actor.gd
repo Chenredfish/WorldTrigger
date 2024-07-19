@@ -35,6 +35,9 @@ func take_behavior():
 		
 func remove_behavior():
 	behaviors.remove_at(0)
+	
+func remove_top_behavior():
+	behaviors.resize(behaviors.size()-1)
 
 func get_behaviors_size():
 	return behaviors.size()

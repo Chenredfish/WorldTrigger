@@ -48,5 +48,5 @@ func _on_ui_layer_start_fight_button_pressed():
 
 func _on_ui_layer_remove_action():
 	if current_map:
-		current_map.actor_remove_behavior()
+		current_map.actor_remove_top_behavior()
 		current_map.remove_move_reflection(-1)
