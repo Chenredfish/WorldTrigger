@@ -26,13 +26,15 @@ func hide_actor_skill():
 
 func panel_add_skill(action : Button):
 	
-	
 	#選擇移動到的位置
 	hide_actor_skill()
-	is_choose_move_site = true
-	await choose_move_site
+	
+	if action.text == "Move":
+		is_choose_move_site = true
+		await choose_move_site
+		is_choose_move_site = false
+	
 	show_actor_skill()
-	is_choose_move_site = false
 	
 	print(action.text)
 	action_list.add_action(action)

@@ -1,4 +1,5 @@
 extends MarginContainer
+class_name ShowButtonContainer
 
 
 func action_cancel():

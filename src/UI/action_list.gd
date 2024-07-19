@@ -5,6 +5,7 @@ extends MarginContainer
 @onready var show_button_container = $Panel/Actions/ShowButtonContainer
 
 var actions_num : int = 0
+var current_actions:Array[ShowButtonContainer]
 
 func _ready():
 	show_button_container.hide()
@@ -12,19 +13,21 @@ func _ready():
 func add_action(action : Button):
 	
 	if actions_num < 5:
-		var new_action_container = MarginContainer.new()
-		new_action_container.custom_minimum_size = show_button_container.custom_minimum_size
-		actions.add_child(new_action_container)
-		new_action_container.script = show_button_container.script
+		current_actions.append(ShowButtonContainer.new())
+		current_actions[-1].custom_minimum_size = show_button_container.custom_minimum_size
+		actions.add_child(current_actions[-1])
 		
 		var new_action = Button.new()
 		new_action.theme = show_button.theme
 		new_action.text = action.text
 		new_action.add_theme_font_size_override("font_size", 11)
-		new_action_container.add_child(new_action)
+		current_actions[-1].add_child(new_action)
 		new_action.pressed.connect(
 			func():
-				new_action_container.action_cancel()
+				current_actions[0].queue_free()
+				current_actions.remove_at(0)
+				
 				actions_num -= 1
+				
 		)
 		actions_num += 1

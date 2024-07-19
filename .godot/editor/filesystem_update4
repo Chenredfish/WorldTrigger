@@ -10,3 +10,4 @@ res://src/UI/ready_fight_form.tscn
 res://src/UI/ready_fight_form.gd
 res://src/UI/skill_menu.tscn
 res://src/UI/skill_menu.gd
+res://src/UI/action_list_Button.gd
