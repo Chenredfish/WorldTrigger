@@ -3,6 +3,7 @@ class_name TestMap
 
 signal show_skill_btn_pressed
 signal move_over
+signal behaviors_is_full(Bool:bool)
 
 const TEST_ACTOR = preload("res://src/actor/test_actor.tscn")
 const SANDBAG = preload("res://src/enemy/sandbag.tscn")
@@ -85,6 +86,9 @@ func remove_move_reflection(remove_number:int):
 
 func actor_add_move_behavior(aim_site:Vector2i):
 	actor.add_behavior(NormalMove.new(aim_site))
+	
+	#偵測是否滿行動
+	_test_behaviors_is_full()
 
 func actor_take_behavior():
 	actor.take_behavior() #執行階段
@@ -92,11 +96,21 @@ func actor_take_behavior():
 func actor_remove_behavior():
 	actor.remove_behavior() #執行階段
 	
+	_test_behaviors_is_full()
+	
 func actor_remove_top_behavior(): #返回行動
 	actor.remove_top_behavior()
+	
+	_test_behaviors_is_full()
 
 func has_actor_reflection()->bool:
 	if actor_reflections:
 		return true
 	else:
 		return false
+
+func _test_behaviors_is_full():
+	if actor.get_behaviors_size() >= actor.behavior_amount:
+		behaviors_is_full.emit(true)
+	else :
+		behaviors_is_full.emit(false)

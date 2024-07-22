@@ -34,6 +34,11 @@ func get_ready_fight_form():
 #刪除所有行動展示
 func remove_all_action():
 	ready_fight_form.remove_all_action()
+	
+#關閉或開啟新增行動
+func change_behaviors_is_full(Bool:bool):
+	print(Bool)
+	ready_fight_form.behaviors_is_full = Bool
 
 #以下都是按鈕觸發
 

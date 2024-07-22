@@ -13,6 +13,7 @@ signal start_fight_button_pressed
 signal remove_action
 
 var is_choose_move_site:bool = false
+var behaviors_is_full:bool = false
 
 func _ready():
 	skill_menu.add_skill.connect(panel_add_skill)
@@ -26,6 +27,10 @@ func hide_actor_skill():
 	action_list_visable.hide()
 
 func panel_add_skill(action : Button):
+	
+	#行動已經滿了，無法添加
+	if behaviors_is_full:
+		return
 	
 	#選擇移動到的位置
 	hide_actor_skill()

@@ -11,8 +11,6 @@ func enter(_msg:Dictionary={}):
 	
 	print("s_Playing_Ready")
 	
-	agent.current_map.show_skill_btn_pressed.connect(show_skill_btn_pressed)
-	
 	mouse_frame = MOUSE_FRAME.instantiate()
 	agent.add_child(mouse_frame)
 	_update_mouse_frame()
@@ -33,12 +31,12 @@ func update(delta):
 	if state_machine.has_value('is_fighting'): #更新狀態
 		is_fighting = state_machine.get_value('is_fighting')
 	if is_fighting:
-		print("is_fight = true")
+		#print("is_fight = true")
 		transform_to(StateEnum.GAME_STATE_TYPE.PLAYING_FIGHT)
 	
 	
 func exit():
-	agent.current_map.show_skill_btn_pressed.disconnect(show_skill_btn_pressed)
+	#agent.current_map.show_skill_btn_pressed.disconnect(show_skill_btn_pressed)
 	
 	is_fighting = false
 	state_machine.set_value('is_fighting', is_fighting)
@@ -56,8 +54,4 @@ func _update_mouse_frame():
 	var tilemap_rendering_quadrant_size = agent.current_map.get_rendering_quadrant_size()
 	mouse_frame.set_position(agent.get_mouse_position_tile_map()*tilemap_rendering_quadrant_size*tilemap_scale)
 
-func show_skill_btn_pressed():
-	if agent.ui_layer.get_ready_fight_form():
-		agent.ui_layer.hide_ready_fight_form()
-	else:
-		agent.ui_layer.show_ready_fight_form()
+
