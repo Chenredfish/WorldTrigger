@@ -45,14 +45,14 @@ func panel_add_skill(action : Button):
 	print(action.text)
 	action_list.add_action(action)
 
-func emit_choose_move_site(mouse_site:Vector2i, actor_site:Vector2i):
+func emit_choose_site(mouse_site:Vector2i, actor_site:Vector2i):
 	
 	if (actor_site-mouse_site).length_squared() ==1 and is_choose_move_site:
 		if abs(mouse_site.x - actor_site.x)==1: #目標位置和角色位置距離為1
 			#print("mouse_site:", mouse_site, ", actor_site:", actor_site)
 			#要求角色增加行動
 			actor_add_behavior.emit(NormalMove.new(mouse_site))
-		elif (mouse_site.y - actor_site.y)==1:
+		elif abs(mouse_site.y - actor_site.y)==1:
 			actor_add_behavior.emit(NormalJump.new(mouse_site, actor_site))
 			
 		#新增殘影在滑鼠點擊位置
@@ -61,7 +61,7 @@ func emit_choose_move_site(mouse_site:Vector2i, actor_site:Vector2i):
 		choose_move_site.emit()
 
 func left_pressed_mouse(mouse_site:Vector2i, actor_site:Vector2i):
-	emit_choose_move_site(mouse_site, actor_site)
+	emit_choose_site(mouse_site, actor_site)
 
 func remove_all_action():
 	action_list.remove_all_action()

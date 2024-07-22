@@ -33,7 +33,7 @@ func take_behavior():
 	if behavior.kind["move"]:
 		if behavior is NormalMove:
 			emit_tilemap_move_self(behavior.aim_site)
-		elif behavior.is_class("NormalJump"):
+		elif behavior is NormalJump:
 			emit_tilemap_jump_self(behavior.aim_site)
 		
 	if behavior.kind["attack"]:
