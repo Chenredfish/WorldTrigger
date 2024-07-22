@@ -6,7 +6,7 @@ extends Control
 @onready var action_list = $UIContainer/HBoxContainer2/ActionList
 
 signal add_skill(action : Button)
-signal actor_add_move_behavior(site : Vector2i)
+signal actor_add_behavior(add_behavior:BaseBehavior)
 signal choose_move_site
 signal add_move_reflection(site:Vector2i)
 signal start_fight_button_pressed
@@ -46,15 +46,19 @@ func panel_add_skill(action : Button):
 	action_list.add_action(action)
 
 func emit_choose_move_site(mouse_site:Vector2i, actor_site:Vector2i):
-	if (mouse_site - actor_site).length_squared() == 1 and is_choose_move_site: #目標位置和角色位置距離為1
-		#技能介面的恢復
-		choose_move_site.emit()
-		
-		#要求角色增加行動
-		actor_add_move_behavior.emit(mouse_site)
-		
+	
+	if (actor_site-mouse_site).length_squared() ==1 and is_choose_move_site:
+		if abs(mouse_site.x - actor_site.x)==1: #目標位置和角色位置距離為1
+			#print("mouse_site:", mouse_site, ", actor_site:", actor_site)
+			#要求角色增加行動
+			actor_add_behavior.emit(NormalMove.new(mouse_site))
+		elif (mouse_site.y - actor_site.y)==1:
+			actor_add_behavior.emit(NormalJump.new(mouse_site, actor_site))
+			
 		#新增殘影在滑鼠點擊位置
 		add_move_reflection.emit(mouse_site)
+		#技能介面的恢復
+		choose_move_site.emit()
 
 func left_pressed_mouse(mouse_site:Vector2i, actor_site:Vector2i):
 	emit_choose_move_site(mouse_site, actor_site)

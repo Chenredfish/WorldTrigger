@@ -39,9 +39,9 @@ func get_map_reflection_position():
 func _on_ui_layer_btn_new_game_pressed():
 	game_state_machine.set_value('is_new_game', true)
 
-func _on_ui_layer_actor_add_move_behavior(site):
+func _on_ui_layer_actor_add_behavior(added_behavior):
 	if current_map:
-		current_map.actor_add_move_behavior(site)
+		current_map.actor_add_behavior(added_behavior)
 
 func _on_ui_layer_start_fight_button_pressed():
 	game_state_machine.set_value('is_fighting', true)

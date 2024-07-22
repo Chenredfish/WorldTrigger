@@ -24,6 +24,7 @@ func _ready():
 	actor = add_role(TEST_ACTOR, actor_start_position)
 	actor.show_skill_btn_pressed.connect(_on_show_skill_btn_pressed)
 	actor.move_actor.connect(_move_actor)
+	actor.jump_actor.connect(_jump_actor)
 	self.add_child(actor)
 	
 
@@ -63,6 +64,24 @@ func _move_actor(aim_site:Vector2i, moved_actor:Node2D):
 	move_over.emit()
 	
 	remove_move_reflection(0)
+	
+func _jump_actor(aim_site:Vector2i, moved_actor:Node2D):
+	aim_site-=Vector2i(1,1) #####大問題產生的問題
+	moved_actor.play_run_animate()
+	while self.map_to_local(aim_site) != moved_actor.get_position():
+		if self.map_to_local(aim_site).y > moved_actor.get_position().y:
+			moved_actor.position.y+=2
+			moved_actor.turn_right()
+		else:
+			moved_actor.position.y-=2
+			moved_actor.turn_left()
+		
+		await get_tree().create_timer(0.1).timeout
+		
+	#print(aim_site)
+	move_over.emit()
+	
+	remove_move_reflection(0)
 
 func add_role(preload_role, position:Vector2i):
 	var role:Node2D
@@ -84,18 +103,14 @@ func remove_move_reflection(remove_number:int):
 		else:
 			actor_reflections.remove_at(remove_number)
 
-func actor_add_move_behavior(aim_site:Vector2i):
-	
-	var correct_aim_site = aim_site-Vector2i(1,1) #####大問題產生的問題
-	
-	if self.local_to_map(actor.get_position()).x - correct_aim_site.x:
-		actor.add_behavior(NormalMove.new(aim_site))
-		print("add_move")
-	elif self.local_to_map(actor.get_position()).y - correct_aim_site.y:
-		print("add_jump")
-		actor.add_behavior(NormalJump.new(aim_site, local_to_map(actor.get_position())))
-	
+func actor_add_behavior(added_behavior:BaseBehavior):
+	actor.add_behavior(added_behavior)
+	#elif correct_actor_site.y - aim_site.y:
 	#偵測是否滿行動
+	_test_behaviors_is_full()
+
+func actor_add_jump_behavior(aim_site:Vector2i):
+	actor.add_behavior(NormalJump.new(aim_site, local_to_map(actor.get_position())))
 	_test_behaviors_is_full()
 
 func actor_take_behavior():
