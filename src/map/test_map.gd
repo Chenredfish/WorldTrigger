@@ -85,7 +85,15 @@ func remove_move_reflection(remove_number:int):
 			actor_reflections.remove_at(remove_number)
 
 func actor_add_move_behavior(aim_site:Vector2i):
-	actor.add_behavior(NormalMove.new(aim_site))
+	
+	var correct_aim_site = aim_site-Vector2i(1,1) #####大問題產生的問題
+	
+	if self.local_to_map(actor.get_position()).x - correct_aim_site.x:
+		actor.add_behavior(NormalMove.new(aim_site))
+		print("add_move")
+	elif self.local_to_map(actor.get_position()).y - correct_aim_site.y:
+		print("add_jump")
+		actor.add_behavior(NormalJump.new(aim_site, local_to_map(actor.get_position())))
 	
 	#偵測是否滿行動
 	_test_behaviors_is_full()
@@ -110,7 +118,7 @@ func has_actor_reflection()->bool:
 		return false
 
 func _test_behaviors_is_full():
-	if actor.get_behaviors_size() >= actor.behavior_amount:
+	if actor.get_behaviors_size() >= actor.max_behavior_amount:
 		behaviors_is_full.emit(true)
 	else :
 		behaviors_is_full.emit(false)

@@ -5,7 +5,7 @@ signal actor_die
 signal move_actor(aim_site:Vector2i, moved_actor:Node2D)
 
 @export var attack_amount:int ##攻擊力
-@export var behavior_amount:int ##行動段數
+@export var max_behavior_amount:int ##行動段數
 @export var max_health:int ##最大生命值
 @export var avoid:int ##閃避機率(0~100)
 @export var trigger1:BaseTrigger
@@ -14,10 +14,12 @@ signal move_actor(aim_site:Vector2i, moved_actor:Node2D)
 
 var current_trigger:TestTrigger
 var current_health:int ##現在血量
+var current_behavior_amount:int ##現在的行為數量
 var behaviors:Array[BaseBehavior]
 
 func _init():
 	current_health = max_health
+	current_behavior_amount = 0
 
 func add_behavior(input_behavior:BaseBehavior):
 	behaviors.append(input_behavior)

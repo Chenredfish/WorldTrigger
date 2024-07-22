@@ -1,5 +1,5 @@
 extends BaseBehavior
-class_name Move
+class_name BaseMove
 
 var aim_site:Vector2i
 

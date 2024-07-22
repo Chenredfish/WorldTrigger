@@ -11,3 +11,9 @@ res://src/map/test_map.tscn
 res://src/map/test_map.gd
 res://addons/state_machine/state/s_playing_init.gd
 res://src/UI/ui_layer.gd
+res://src/actor/base_actor.gd
+res://src/actor/test_actor.gd
+res://src/behaviors/behavior.gd
+res://src/behaviors/moves/normal_move.gd
+res://src/behaviors/moves/move.gd
+res://src/behaviors/moves/normal_jump.gd

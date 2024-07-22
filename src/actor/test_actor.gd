@@ -7,7 +7,7 @@ signal show_skill_btn_pressed
 
 func _init():
 	attack_amount = 20
-	behavior_amount = 7
+	max_behavior_amount = 7
 	max_health = 3000
 	avoid = 5
 	trigger1 = TestTrigger.new()
