@@ -28,7 +28,6 @@ func show_actor_skill():
 func hide_actor_skill():
 	skill_container.hide()
 	action_list_visable.hide()
-	ready_stage.timing = false
 
 func panel_add_skill(action : Button):
 	
@@ -73,6 +72,7 @@ func remove_all_action():
 
 func _on_start_button_pressed():
 	start_fight_button_pressed.emit()
+	ready_stage.timing = false
 
 
 func _on_action_list_remove_action():
