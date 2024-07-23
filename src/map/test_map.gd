@@ -9,7 +9,7 @@ const TEST_ACTOR = preload("res://src/actor/test_actor.tscn")
 const SANDBAG = preload("res://src/enemy/sandbag.tscn")
 const TEST_ACTOR_ROLL_REFLECTION = preload("res://src/actor/test_actor_roll_reflection.tscn")
 
-@export var actor_start_position:Vector2i = Vector2i(4,4)
+@export var actor_start_position:Vector2i = Vector2i(5,5)
 @export var enemy_start_position:Vector2i
 
 var actor:TestActor
@@ -38,7 +38,7 @@ func _process(delta):
 
 func get_actor_map_position():
 	if actor:
-		return self.local_to_map(actor.get_position())+Vector2i(1,1) ####大問題!!!
+		return self.local_to_map(actor.get_position()) ####大問題!!!
 		
 func get_reflection_map_position():
 	if actor_reflections[-1]:
@@ -48,7 +48,7 @@ func _on_show_skill_btn_pressed():
 	show_skill_btn_pressed.emit()
 
 func _move_actor(aim_site:Vector2i, moved_actor:Node2D):
-	aim_site-=Vector2i(1,1) #####大問題產生的問題
+	#aim_site-=Vector2i(1,1) #####大問題產生的問題
 	moved_actor.play_run_animate()
 	while self.map_to_local(aim_site) != moved_actor.get_position():
 		if self.map_to_local(aim_site).x > moved_actor.get_position().x:
@@ -66,7 +66,7 @@ func _move_actor(aim_site:Vector2i, moved_actor:Node2D):
 	remove_move_reflection(0)
 	
 func _jump_actor(aim_site:Vector2i, moved_actor:Node2D):
-	aim_site-=Vector2i(1,1) #####大問題產生的問題
+	#aim_site-=Vector2i(1,1) #####大問題產生的問題
 	moved_actor.play_run_animate()
 	while self.map_to_local(aim_site) != moved_actor.get_position():
 		if self.map_to_local(aim_site).y > moved_actor.get_position().y:
