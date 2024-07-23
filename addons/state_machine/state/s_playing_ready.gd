@@ -26,7 +26,7 @@ func update(delta):
 		else:
 			old_position = agent.get_map_actor_map_position()
 			
-		agent.ui_layer.left_pressed_mouse(agent.get_mouse_position_tile_map(), old_position)
+		agent.ui_layer.left_pressed_mouse(agent.get_mouse_position_tile_map(), old_position, agent.get_map_actor_map_position())
 	
 	if state_machine.has_value('is_fighting'): #更新狀態
 		is_fighting = state_machine.get_value('is_fighting')

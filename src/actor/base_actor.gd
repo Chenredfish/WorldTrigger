@@ -15,15 +15,16 @@ signal jump_actor(aim_site:Vector2i, moved_actor:Node2D)
 
 var current_trigger:TestTrigger
 var current_health:int ##現在血量
-var current_behavior_amount:int ##現在的行為數量
+var current_behaviors_amount:int ##現在的行為數量
 var behaviors:Array[BaseBehavior]
 
 func _init():
 	current_health = max_health
-	current_behavior_amount = 0
+	current_behaviors_amount = 0
 
 func add_behavior(input_behavior:BaseBehavior):
 	behaviors.append(input_behavior)
+	current_behaviors_amount+=input_behavior.behavior_amount
 	
 func take_behavior():
 	var behavior = behaviors[0]
@@ -40,13 +41,18 @@ func take_behavior():
 		pass
 		
 func remove_behavior():
+	current_behaviors_amount -= behaviors[0].behavior_amount
 	behaviors.remove_at(0)
 	
 func remove_top_behavior():
+	current_behaviors_amount -= behaviors[-1].behavior_amount
 	behaviors.resize(behaviors.size()-1)
 
 func get_behaviors_size():
 	return behaviors.size()
+	
+func get_current_behaviors_amount():
+	return current_behaviors_amount
 	
 func get_current_health()->int:
 	return current_health

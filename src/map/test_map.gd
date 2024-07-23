@@ -133,7 +133,7 @@ func has_actor_reflection()->bool:
 		return false
 
 func _test_behaviors_is_full():
-	if actor.get_behaviors_size() >= actor.max_behavior_amount:
+	if actor.get_current_behaviors_amount() >= actor.max_behavior_amount:
 		behaviors_is_full.emit(true)
 	else :
 		behaviors_is_full.emit(false)
