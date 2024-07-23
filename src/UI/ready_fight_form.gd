@@ -4,6 +4,8 @@ extends Control
 @onready var skill_container = $UIContainer/SkillContainer
 @onready var skill_menu = $UIContainer/SkillContainer/SkillMenu
 @onready var action_list = $UIContainer/HBoxContainer2/ActionList
+@onready var ready_stage = $ReadyStage
+
 
 signal add_skill(action : Button)
 signal actor_add_behavior(add_behavior:BaseBehavior)
@@ -21,10 +23,12 @@ func _ready():
 func show_actor_skill():
 	skill_container.show()
 	action_list_visable.show()
+	ready_stage.timing = true
 
 func hide_actor_skill():
 	skill_container.hide()
 	action_list_visable.hide()
+	ready_stage.timing = false
 
 func panel_add_skill(action : Button):
 	

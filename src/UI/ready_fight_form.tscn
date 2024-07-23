@@ -1,9 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://cu2teh8cydu2e"]
+[gd_scene load_steps=12 format=3 uid="uid://cu2teh8cydu2e"]
 
 [ext_resource type="Script" path="res://src/UI/ready_fight_form.gd" id="1_lrli3"]
 [ext_resource type="PackedScene" uid="uid://dy36lnamjv3x" path="res://src/UI/action_list.tscn" id="2_2pfrj"]
 [ext_resource type="Texture2D" uid="uid://c1mylnha2cekb" path="res://assets/UI Buttons/Pixel_Button.png" id="2_3c1mp"]
 [ext_resource type="PackedScene" uid="uid://sn3te1ks0kww" path="res://src/UI/skill_menu.tscn" id="4_5k5kl"]
+[ext_resource type="Script" path="res://src/UI/ready_stage.gd" id="5_kwptm"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_g1ea6"]
 texture = ExtResource("2_3c1mp")
@@ -39,6 +40,22 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_lrli3")
+
+[node name="ReadyStage" type="PanelContainer" parent="."]
+custom_minimum_size = Vector2(250, 80)
+layout_mode = 2
+offset_left = 419.0
+offset_top = -80.0
+offset_right = 669.0
+size_flags_vertical = 0
+script = ExtResource("5_kwptm")
+
+[node name="Label" type="Label" parent="ReadyStage"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Ready Stage"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="UIContainer" type="MarginContainer" parent="."]
 unique_name_in_owner = true

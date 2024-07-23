@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://dbt1d84qwn23d"]
+
+[ext_resource type="Script" path="res://src/UI/ReadyStage.gd" id="1_u0hf3"]
+[ext_resource type="Texture2D" uid="uid://c1mylnha2cekb" path="res://assets/UI Buttons/Pixel_Button.png" id="2_frp1j"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cw6d3"]
+texture = ExtResource("2_frp1j")
+region_rect = Rect2(576, 256, 65, 33)
+
+[sub_resource type="Theme" id="Theme_fcbfo"]
+Panel/styles/panel = SubResource("StyleBoxTexture_cw6d3")
+
+[node name="ReadyStage" type="MarginContainer"]
+custom_minimum_size = Vector2(300, 80)
+offset_right = 300.0
+offset_bottom = 80.0
+script = ExtResource("1_u0hf3")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="MarginContainer"]
+layout_mode = 2
+theme = SubResource("Theme_fcbfo")
+
+[node name="Label" type="Label" parent="MarginContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+text = "Ready Stage"
+horizontal_alignment = 1
+vertical_alignment = 1
