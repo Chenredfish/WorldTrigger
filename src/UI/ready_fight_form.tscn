@@ -1,10 +1,17 @@
-[gd_scene load_steps=12 format=3 uid="uid://cu2teh8cydu2e"]
+[gd_scene load_steps=14 format=3 uid="uid://cu2teh8cydu2e"]
 
 [ext_resource type="Script" path="res://src/UI/ready_fight_form.gd" id="1_lrli3"]
 [ext_resource type="PackedScene" uid="uid://dy36lnamjv3x" path="res://src/UI/action_list.tscn" id="2_2pfrj"]
 [ext_resource type="Texture2D" uid="uid://c1mylnha2cekb" path="res://assets/UI Buttons/Pixel_Button.png" id="2_3c1mp"]
 [ext_resource type="PackedScene" uid="uid://sn3te1ks0kww" path="res://src/UI/skill_menu.tscn" id="4_5k5kl"]
 [ext_resource type="Script" path="res://src/UI/ready_stage.gd" id="5_kwptm"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_q8gkl"]
+texture = ExtResource("2_3c1mp")
+region_rect = Rect2(384, 256, 64, 32)
+
+[sub_resource type="Theme" id="Theme_b5lsi"]
+PanelContainer/styles/panel = SubResource("StyleBoxTexture_q8gkl")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_g1ea6"]
 texture = ExtResource("2_3c1mp")
@@ -48,6 +55,7 @@ offset_left = 419.0
 offset_top = -80.0
 offset_right = 669.0
 size_flags_vertical = 0
+theme = SubResource("Theme_b5lsi")
 script = ExtResource("5_kwptm")
 
 [node name="Label" type="Label" parent="ReadyStage"]

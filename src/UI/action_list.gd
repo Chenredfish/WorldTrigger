@@ -5,6 +5,7 @@ extends MarginContainer
 @onready var show_button_container = $Panel/Actions/ShowButtonContainer
 
 signal remove_action
+signal action_end
 
 var actions_num : int = 0
 var current_actions:Array[ShowButtonContainer]
@@ -42,3 +43,4 @@ func remove_all_action():
 		current_actions[0].queue_free()
 		current_actions.remove_at(0)
 		actions_num -= 1
+	action_end.emit()

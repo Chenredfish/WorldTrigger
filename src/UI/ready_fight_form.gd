@@ -23,7 +23,6 @@ func _ready():
 func show_actor_skill():
 	skill_container.show()
 	action_list_visable.show()
-	ready_stage.timing = true
 
 func hide_actor_skill():
 	skill_container.hide()
@@ -68,11 +67,11 @@ func left_pressed_mouse(mouse_site:Vector2i, last_site:Vector2i, actor_site:Vect
 
 func remove_all_action():
 	action_list.remove_all_action()
-
+	ready_stage.change_ready()
 
 func _on_start_button_pressed():
 	start_fight_button_pressed.emit()
-	ready_stage.timing = false
+	ready_stage.change_ready()
 
 
 func _on_action_list_remove_action():
