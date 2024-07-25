@@ -1,7 +1,8 @@
 res://main.tscn
 res://src/game_state_machine.gd
 res://main.gd
-res://src/UI/ready_stage.gd
 res://src/actor/test_actor.tscn
 res://src/UI/ui_layer.tscn
 res://src/UI/ready_fight_form.tscn
+res://src/UI/action_list.tscn
+res://src/UI/skill_menu.tscn

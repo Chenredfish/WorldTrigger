@@ -1,10 +1,10 @@
-Label
 PanelContainer
+VBoxContainer
+Panel
+Label
 AnimatedSprite2D
 MarginContainer
 Button
-VBoxContainer
-Panel
 Control
 TileMap
 TestTrigger
@@ -12,4 +12,3 @@ AnimationPlayer
 TouchScreenButton
 HBoxContainer
 GridContainer
-Node2D
