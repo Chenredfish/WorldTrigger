@@ -41,6 +41,12 @@ theme_override_constants/separation = 20
 custom_minimum_size = Vector2(0, 30)
 layout_mode = 2
 
+[node name="Label" type="Label" parent="VBoxContainer/PanelContainer"]
+layout_mode = 2
+text = "5 / 7"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="Panel" type="Panel" parent="VBoxContainer"]
 custom_minimum_size = Vector2(72, 400)
 layout_mode = 2

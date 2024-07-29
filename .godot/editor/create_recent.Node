@@ -1,7 +1,7 @@
+Label
 PanelContainer
 VBoxContainer
 Panel
-Label
 AnimatedSprite2D
 MarginContainer
 Button
