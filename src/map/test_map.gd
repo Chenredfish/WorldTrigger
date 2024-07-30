@@ -2,7 +2,7 @@ extends TileMap
 class_name TestMap
 
 signal show_skill_btn_pressed
-signal move_over
+signal behavior_over
 signal behaviors_is_full(Bool:bool)
 
 const TEST_ACTOR = preload("res://src/actor/test_actor.tscn")
@@ -10,7 +10,7 @@ const SANDBAG = preload("res://src/enemy/sandbag.tscn")
 const TEST_ACTOR_ROLL_REFLECTION = preload("res://src/actor/test_actor_roll_reflection.tscn")
 
 @export var actor_start_position:Vector2i = Vector2i(5,5)
-@export var enemy_start_position:Vector2i
+@export var enemy_start_position:Vector2i = Vector2i(9,5)
 
 var actor:TestActor
 var enemy:Sandbag
@@ -25,11 +25,13 @@ func _ready():
 	actor.show_skill_btn_pressed.connect(_on_show_skill_btn_pressed)
 	actor.move_actor.connect(_move_actor)
 	actor.jump_actor.connect(_jump_actor)
+	actor.make_damage.connect(_make_damage)
 	self.add_child(actor)
 	
 
 	#新增敵人
 	enemy = add_role(SANDBAG, enemy_start_position)
+	enemy.add_to_group("enemys")
 	self.add_child(enemy)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -61,7 +63,7 @@ func _move_actor(aim_site:Vector2i, moved_actor:Node2D):
 		await get_tree().create_timer(0.1).timeout
 		
 	#print(aim_site)
-	move_over.emit()
+	behavior_over.emit()
 	
 	remove_move_reflection(0)
 	
@@ -79,9 +81,18 @@ func _jump_actor(aim_site:Vector2i, moved_actor:Node2D):
 		await get_tree().create_timer(0.1).timeout
 		
 	#print(aim_site)
-	move_over.emit()
+	behavior_over.emit()
 	
 	remove_move_reflection(0)
+	
+func _make_damage(damage:int, attack_site:Vector2i):
+	print("attack_site:",attack_site)
+	print("enemy_site:", local_to_map(enemy.get_position()))
+	for enemy in get_tree().get_nodes_in_group("enemys"):
+		if local_to_map(enemy.get_position()) == attack_site:
+			print("enemy take damage")
+	await get_tree().create_timer(1).timeout
+	behavior_over.emit()
 
 func add_role(preload_role, position:Vector2i):
 	var role:Node2D

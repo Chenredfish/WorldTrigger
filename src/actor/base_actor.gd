@@ -4,6 +4,7 @@ class_name Actor
 signal actor_die
 signal move_actor(aim_site:Vector2i, moved_actor:Node2D)
 signal jump_actor(aim_site:Vector2i, moved_actor:Node2D)
+signal make_damage(damage:int, attack_site:Vector2i)
 
 @export var attack_amount:int ##攻擊力
 @export var max_behavior_amount:int ##行動段數
@@ -40,7 +41,8 @@ func take_behavior():
 			emit_tilemap_jump_self(behavior.aim_site)
 		
 	if behavior.kind["attack"]:
-		pass
+		if behavior is NormalAttack:
+			emit_tilemap_make_damage(behavior)
 		
 func remove_behavior():
 	current_behaviors_amount -= behaviors[0].behavior_amount
@@ -64,6 +66,9 @@ func emit_tilemap_move_self(input_aim_site:Vector2i):
 	
 func emit_tilemap_jump_self(input_aim_site:Vector2i):
 	jump_actor.emit(input_aim_site, self)
+	
+func emit_tilemap_make_damage(attack_behavior:NormalAttack):
+	make_damage.emit(10, attack_behavior.attack_site)
 
 func take_damage(total_damage:int):
 	current_health-=total_damage

@@ -21,8 +21,7 @@ func enter(_msg:Dictionary = {}):
 			actor_take_behavior()
 			actor_remove_behavior()
 			#print("a")
-		await agent.current_map.move_over
-		#print("b")
+		await agent.current_map.behavior_over
 
 
 func update(delta):

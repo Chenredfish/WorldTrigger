@@ -13,3 +13,7 @@ res://src/behaviors/attacks/normal_attack.gd
 res://src/trigger/test_trigger.gd
 res://src/actor/base_actor.gd
 res://src/UI/ui_layer.gd
+res://src/map/test_map.tscn
+res://addons/state_machine/state/s_playing_fight.gd
+res://src/map/test_map.gd
+res://src/enemy/sandbag.tscn
