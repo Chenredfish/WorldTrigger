@@ -8,3 +8,8 @@ res://src/UI/action_list.tscn
 res://src/UI/skill_menu.tscn
 res://src/UI/action_list.gd
 res://src/UI/ready_fight_form.gd
+res://src/behaviors/attacks/attack.gd
+res://src/behaviors/attacks/normal_attack.gd
+res://src/trigger/test_trigger.gd
+res://src/actor/base_actor.gd
+res://src/UI/ui_layer.gd

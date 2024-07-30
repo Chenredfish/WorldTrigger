@@ -23,8 +23,10 @@ func _init():
 	current_behaviors_amount = 0
 
 func add_behavior(input_behavior:BaseBehavior):
+	
 	behaviors.append(input_behavior)
 	current_behaviors_amount+=input_behavior.behavior_amount
+	print("current_behaviors_amount:", current_behaviors_amount)
 	
 func take_behavior():
 	var behavior = behaviors[0]

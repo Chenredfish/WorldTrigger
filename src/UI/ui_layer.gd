@@ -37,7 +37,6 @@ func remove_all_action():
 	
 #關閉或開啟新增行動
 func change_behaviors_is_full(Bool:bool):
-	print(Bool)
 	ready_fight_form.behaviors_is_full = Bool
 
 #以下都是按鈕觸發

@@ -4,6 +4,6 @@ class_name TestTrigger
 
 func _init():
 	weight_amount = 1
-	behavior_choice.append(NormalAttack.new())
+	#behavior_choice.append(NormalAttack)
 	trigger_attack_amount = 20
 	weight_amount = 1
