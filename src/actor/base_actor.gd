@@ -27,7 +27,7 @@ func add_behavior(input_behavior:BaseBehavior):
 	
 	behaviors.append(input_behavior)
 	current_behaviors_amount+=input_behavior.behavior_amount
-	print("current_behaviors_amount:", current_behaviors_amount)
+	#print("current_behaviors_amount:", current_behaviors_amount)
 	
 func take_behavior():
 	var behavior = behaviors[0]
@@ -68,10 +68,13 @@ func emit_tilemap_jump_self(input_aim_site:Vector2i):
 	jump_actor.emit(input_aim_site, self)
 	
 func emit_tilemap_make_damage(attack_behavior:NormalAttack):
-	make_damage.emit(10, attack_behavior.attack_site)
+	make_damage.emit(10, attack_behavior.attack_site, self)
 
 func take_damage(total_damage:int):
 	current_health-=total_damage
+	if current_health == 0:
+		self.die()
 	
 func die():
 	actor_die.emit()
+	self.queue_free()

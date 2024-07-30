@@ -22,6 +22,11 @@ func play_run_animate():
 	test_actor_animate.play("roll")
 	await test_actor_animate.animation_finished
 	test_actor_animate.play("idle")
+	
+func play_attack_animate():
+	test_actor_animate.play("attack")
+	await test_actor_animate.animation_finished
+	test_actor_animate.play("idle")
 
 func turn_right():
 	test_actor_animate.flip_h = false

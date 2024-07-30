@@ -1,8 +1,24 @@
-[gd_scene load_steps=34 format=3 uid="uid://rt4jo310ctba"]
+[gd_scene load_steps=38 format=3 uid="uid://rt4jo310ctba"]
 
 [ext_resource type="Texture2D" uid="uid://2ejijx5xdofs" path="res://assets/brackeys_platformer_assets/sprites/knight.png" id="1_p10h0"]
 [ext_resource type="Script" path="res://src/actor/test_actor.gd" id="1_ukf4f"]
 [ext_resource type="Texture2D" uid="uid://cyftityv7ykkn" path="res://icon.svg" id="3_pvveg"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_230aj"]
+atlas = ExtResource("1_p10h0")
+region = Rect2(0, 192, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7l64u"]
+atlas = ExtResource("1_p10h0")
+region = Rect2(32, 192, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4j5e0"]
+atlas = ExtResource("1_p10h0")
+region = Rect2(64, 192, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bkl7j"]
+atlas = ExtResource("1_p10h0")
+region = Rect2(96, 192, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_s3thd"]
 atlas = ExtResource("1_p10h0")
@@ -124,6 +140,23 @@ region = Rect2(224, 96, 32, 32)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_230aj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7l64u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4j5e0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bkl7j")
+}],
+"loop": false,
+"name": &"attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_s3thd")
 }, {
 "duration": 1.0,
@@ -235,7 +268,7 @@ avoid = 5
 unique_name_in_owner = true
 position = Vector2(0, -4)
 sprite_frames = SubResource("SpriteFrames_3fmgk")
-animation = &"idle"
+animation = &"attack"
 autoplay = "idle"
 
 [node name="TouchScreenButton" type="TouchScreenButton" parent="."]

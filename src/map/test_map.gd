@@ -52,6 +52,7 @@ func _on_show_skill_btn_pressed():
 func _move_actor(aim_site:Vector2i, moved_actor:Node2D):
 	#aim_site-=Vector2i(1,1) #####大問題產生的問題
 	moved_actor.play_run_animate()
+	
 	while self.map_to_local(aim_site) != moved_actor.get_position():
 		if self.map_to_local(aim_site).x > moved_actor.get_position().x:
 			moved_actor.position.x+=2
@@ -63,6 +64,8 @@ func _move_actor(aim_site:Vector2i, moved_actor:Node2D):
 		await get_tree().create_timer(0.1).timeout
 		
 	#print(aim_site)
+	await moved_actor.test_actor_animate.animation_finished
+	
 	behavior_over.emit()
 	
 	remove_move_reflection(0)
@@ -70,6 +73,7 @@ func _move_actor(aim_site:Vector2i, moved_actor:Node2D):
 func _jump_actor(aim_site:Vector2i, moved_actor:Node2D):
 	#aim_site-=Vector2i(1,1) #####大問題產生的問題
 	moved_actor.play_run_animate()
+	
 	while self.map_to_local(aim_site) != moved_actor.get_position():
 		if self.map_to_local(aim_site).y > moved_actor.get_position().y:
 			moved_actor.position.y+=2
@@ -80,18 +84,25 @@ func _jump_actor(aim_site:Vector2i, moved_actor:Node2D):
 		
 		await get_tree().create_timer(0.1).timeout
 		
+	await moved_actor.test_actor_animate.animation_finished
+		
 	#print(aim_site)
 	behavior_over.emit()
 	
 	remove_move_reflection(0)
 	
-func _make_damage(damage:int, attack_site:Vector2i):
-	print("attack_site:",attack_site)
-	print("enemy_site:", local_to_map(enemy.get_position()))
-	for enemy in get_tree().get_nodes_in_group("enemys"):
-		if local_to_map(enemy.get_position()) == attack_site:
-			print("enemy take damage")
-	await get_tree().create_timer(1).timeout
+func _make_damage(damage:int, attack_site:Vector2i, attack_from:Node2D):
+	#print("attack_site:",attack_site)
+	#print("enemy_site:", local_to_map(enemy.get_position()))
+	if attack_from is TestActor:
+		attack_from.play_attack_animate()
+		
+		for enemy in get_tree().get_nodes_in_group("enemys"):
+			if local_to_map(enemy.get_position()) == attack_site:
+				print("enemy take damage")
+				enemy.take_damage(damage)
+	
+	await attack_from.test_actor_animate.animation_finished
 	behavior_over.emit()
 
 func add_role(preload_role, position:Vector2i):
