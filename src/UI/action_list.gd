@@ -1,8 +1,8 @@
 extends MarginContainer
 
-@onready var actions = $Panel/Actions
-@onready var show_button = $Panel/Actions/ShowButtonContainer/ShowButton
-@onready var show_button_container = $Panel/Actions/ShowButtonContainer
+@onready var actions = $VBoxContainer/Panel/Actions
+@onready var show_button = $VBoxContainer/Panel/Actions/ShowButtonContainer/ShowButton
+@onready var show_button_container = $VBoxContainer/Panel/Actions/ShowButtonContainer
 
 signal remove_action
 signal action_end

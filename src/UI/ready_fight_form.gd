@@ -1,6 +1,6 @@
 extends Control
 
-@onready var action_list_visable = $UIContainer/HBoxContainer2/ActionList/Panel
+@onready var action_list_visable = $UIContainer/HBoxContainer2/ActionList
 @onready var skill_container = $UIContainer/SkillContainer
 @onready var skill_menu = $UIContainer/SkillContainer/SkillMenu
 @onready var action_list = $UIContainer/HBoxContainer2/ActionList
