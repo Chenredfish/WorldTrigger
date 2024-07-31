@@ -46,7 +46,8 @@ func _on_ui_layer_actor_add_behavior(added_behavior):
 func _on_ui_layer_start_fight_button_pressed():
 	game_state_machine.set_value('is_fighting', true)
 
-func _on_ui_layer_remove_action():
+func _on_ui_layer_remove_action(action_text:String):
 	if current_map:
 		current_map.actor_remove_top_behavior()
-		current_map.remove_move_reflection(-1)
+		if action_text == "Move":
+			current_map.remove_move_reflection(-1)

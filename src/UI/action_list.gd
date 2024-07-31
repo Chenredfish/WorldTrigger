@@ -4,7 +4,7 @@ extends MarginContainer
 @onready var show_button = $VBoxContainer/Panel/Actions/ShowButtonContainer/ShowButton
 @onready var show_button_container = $VBoxContainer/Panel/Actions/ShowButtonContainer
 
-signal remove_action
+signal remove_action(action_text:String)
 signal action_end
 
 var actions_num : int = 0
@@ -28,10 +28,9 @@ func add_action(action : Button):
 		current_actions[-1].add_child(new_action)
 		new_action.pressed.connect(
 			func():
-				current_actions[0].queue_free()
-				current_actions.remove_at(0)
-				
-				remove_action.emit()
+				remove_action.emit(current_actions[-1].get_child(0).text)
+				current_actions[-1].queue_free()
+				current_actions.resize(current_actions.size()-1)
 				
 				actions_num -= 1
 				

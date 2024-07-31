@@ -12,7 +12,7 @@ signal actor_add_behavior(add_behavior:BaseBehavior)
 signal choose_move_site
 signal add_move_reflection(site:Vector2i)
 signal start_fight_button_pressed
-signal remove_action
+signal remove_action(action_text:String)
 
 var is_choose_site:bool = false
 var behaviors_is_full:bool = false
@@ -74,5 +74,5 @@ func _on_start_button_pressed():
 	ready_stage.change_ready()
 
 
-func _on_action_list_remove_action():
-	remove_action.emit()
+func _on_action_list_remove_action(action_text:String):
+	remove_action.emit(action_text)

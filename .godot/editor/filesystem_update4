@@ -5,8 +5,7 @@ res://src/actor/test_actor.tscn
 res://src/UI/ui_layer.tscn
 res://src/map/test_map.tscn
 res://src/UI/ready_fight_form.tscn
-res://src/map/test_map.gd
-res://src/enemy/sandbag.gd
-res://src/actor/base_actor.gd
+res://src/UI/action_list.tscn
+res://src/UI/action_list.gd
 res://src/UI/ready_fight_form.gd
-res://src/actor/test_actor.gd
+res://src/UI/ui_layer.gd
