@@ -9,3 +9,8 @@ res://src/UI/action_list.tscn
 res://src/UI/action_list.gd
 res://src/UI/ready_fight_form.gd
 res://src/UI/ui_layer.gd
+res://src/actor/base_actor.gd
+res://src/enemy/sandbag.gd
+res://src/enemy/sandbag.tscn
+res://src/trigger/base_trigger.gd
+res://src/trigger/test_trigger.gd

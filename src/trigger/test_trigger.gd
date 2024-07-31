@@ -6,4 +6,3 @@ func _init():
 	weight_amount = 1
 	#behavior_choice.append(NormalAttack)
 	trigger_attack_amount = 20
-	weight_amount = 1

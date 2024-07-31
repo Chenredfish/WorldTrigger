@@ -5,3 +5,6 @@ class_name BaseTrigger
 @export var weight_amount:int ##1或2
 
 var behavior_choice:Array[BaseBehavior]=[]
+
+func get_trigger_attack_amount():
+	return trigger_attack_amount

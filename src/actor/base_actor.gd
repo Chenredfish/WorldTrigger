@@ -68,11 +68,13 @@ func emit_tilemap_jump_self(input_aim_site:Vector2i):
 	jump_actor.emit(input_aim_site, self)
 	
 func emit_tilemap_make_damage(attack_behavior:NormalAttack):
-	make_damage.emit(10, attack_behavior.attack_site, self)
+	var damage:int = self.attack_amount + current_trigger.
+	make_damage.emit(3000, attack_behavior.attack_site, self)
 
 func take_damage(total_damage:int):
 	current_health-=total_damage
-	if current_health == 0:
+	print("current_health:", current_health)
+	if current_health <= 0:
 		self.die()
 	
 func die():
