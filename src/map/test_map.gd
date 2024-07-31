@@ -115,8 +115,13 @@ func add_role(preload_role, position:Vector2i):
 	return role
 	
 #新增移動的殘影
-func add_move_reflection(site:Vector2i):
-	actor_reflections.append(add_role(TEST_ACTOR_ROLL_REFLECTION, site))
+func add_move_reflection(mouse_site:Vector2i, last_site:Vector2i):
+	actor_reflections.append(add_role(TEST_ACTOR_ROLL_REFLECTION, mouse_site))
+	if mouse_site.x > last_site.x:
+		actor_reflections[-1].get_child(0).flip_h = false
+	else :
+		actor_reflections[-1].get_child(0).flip_h = true
+		
 	self.add_child(actor_reflections[-1])
 	
 func remove_move_reflection(remove_number:int):

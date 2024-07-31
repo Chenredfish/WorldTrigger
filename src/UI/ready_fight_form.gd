@@ -10,7 +10,7 @@ extends Control
 signal add_skill(action : Button)
 signal actor_add_behavior(add_behavior:BaseBehavior)
 signal choose_move_site
-signal add_move_reflection(site:Vector2i)
+signal add_move_reflection(mouse_site:Vector2i, last_site:Vector2i)
 signal start_fight_button_pressed
 signal remove_action(action_text:String)
 
@@ -57,7 +57,7 @@ func emit_choose_site(mouse_site:Vector2i, last_site:Vector2i, actor_site:Vector
 			elif abs(mouse_site.y - last_site.y)==1:
 				actor_add_behavior.emit(NormalJump.new(mouse_site, actor_site))
 			#新增殘影在滑鼠點擊位置
-			add_move_reflection.emit(mouse_site)
+			add_move_reflection.emit(mouse_site,last_site)
 		elif current_action_text == "Normal\nPunch":
 			actor_add_behavior.emit(NormalAttack.new(mouse_site))
 		choose_move_site.emit()

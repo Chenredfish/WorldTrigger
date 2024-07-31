@@ -21,8 +21,8 @@ func update(delta:float):
 func exit():
 	pass
 
-func map_add_move_reflection(site:Vector2i):
-	agent.current_map.add_move_reflection(site)
+func map_add_move_reflection(mouse_site:Vector2i, last_site:Vector2i):
+	agent.current_map.add_move_reflection(mouse_site, last_site)
 
 func show_skill_btn_pressed():
 	if agent.ui_layer.get_ready_fight_form():

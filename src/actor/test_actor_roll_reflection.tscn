@@ -71,9 +71,11 @@ animations = [{
 script = ExtResource("1_f51bk")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+unique_name_in_owner = true
 self_modulate = Color(1, 1, 1, 0.635294)
 position = Vector2(0, -4)
 sprite_frames = SubResource("SpriteFrames_xaw32")
 animation = &"roll"
 autoplay = "roll"
 frame_progress = 0.0151851
+flip_h = true
