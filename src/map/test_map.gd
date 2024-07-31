@@ -26,6 +26,8 @@ func _ready():
 	actor.move_actor.connect(_move_actor)
 	actor.jump_actor.connect(_jump_actor)
 	actor.make_damage.connect(_make_damage)
+	
+	actor.current_trigger = TestTrigger.new()
 	self.add_child(actor)
 	
 

@@ -19,6 +19,8 @@ var current_health:int ##現在血量
 var current_behaviors_amount:int ##現在的行為數量
 var behaviors:Array[BaseBehavior]
 
+var rng = RandomNumberGenerator.new() #亂數
+
 func _init():
 	current_health = max_health
 	current_behaviors_amount = 0
@@ -68,8 +70,8 @@ func emit_tilemap_jump_self(input_aim_site:Vector2i):
 	jump_actor.emit(input_aim_site, self)
 	
 func emit_tilemap_make_damage(attack_behavior:NormalAttack):
-	var damage:int = self.attack_amount + current_trigger.
-	make_damage.emit(3000, attack_behavior.attack_site, self)
+	var damage:int = self.attack_amount * current_trigger.get_trigger_attack_amount() *rng.randi_range(95, 100)/100
+	make_damage.emit(damage, attack_behavior.attack_site, self)
 
 func take_damage(total_damage:int):
 	current_health-=total_damage
