@@ -1,9 +1,16 @@
-[gd_scene load_steps=10 format=3 uid="uid://dy36lnamjv3x"]
+[gd_scene load_steps=12 format=3 uid="uid://dy36lnamjv3x"]
 
 [ext_resource type="Script" path="res://src/UI/action_list.gd" id="1_jug6j"]
 [ext_resource type="Texture2D" uid="uid://6tcknnunbqyv" path="res://assets/UI Buttons/Pixel_Button_spin.png" id="1_pjsyp"]
 [ext_resource type="Texture2D" uid="uid://c1mylnha2cekb" path="res://assets/UI Buttons/Pixel_Button.png" id="3_7o74p"]
 [ext_resource type="Script" path="res://src/UI/action_list_Button.gd" id="4_kyrwg"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nbpvn"]
+texture = ExtResource("3_7o74p")
+region_rect = Rect2(320, 320, 64, 32)
+
+[sub_resource type="Theme" id="Theme_ytceo"]
+Label/styles/normal = SubResource("StyleBoxTexture_nbpvn")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_l7wou"]
 texture = ExtResource("1_pjsyp")
@@ -38,12 +45,12 @@ layout_mode = 2
 theme_override_constants/separation = 20
 
 [node name="PanelContainer" type="PanelContainer" parent="VBoxContainer"]
-custom_minimum_size = Vector2(0, 30)
 layout_mode = 2
 
-[node name="Label" type="Label" parent="VBoxContainer/PanelContainer"]
+[node name="ActionsNumLabel" type="Label" parent="VBoxContainer/PanelContainer"]
 layout_mode = 2
-text = "5 / 7"
+theme = SubResource("Theme_ytceo")
+text = "0 / 7"
 horizontal_alignment = 1
 vertical_alignment = 1
 

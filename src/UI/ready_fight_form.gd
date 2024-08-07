@@ -1,6 +1,6 @@
 extends Control
 
-@onready var action_list_visable = $UIContainer/HBoxContainer2/ActionList
+@onready var action_list_visable = $UIContainer/HBoxContainer2/ActionList/VBoxContainer
 @onready var skill_container = $UIContainer/SkillContainer
 @onready var skill_menu = $UIContainer/SkillContainer/SkillMenu
 @onready var action_list = $UIContainer/HBoxContainer2/ActionList
@@ -54,8 +54,10 @@ func emit_choose_site(mouse_site:Vector2i, last_site:Vector2i, actor_site:Vector
 		if current_action_text == "Move":
 			if abs(mouse_site.x - last_site.x)==1: #目標位置和角色位置距離為1
 				actor_add_behavior.emit(NormalMove.new(mouse_site))
+
 			elif abs(mouse_site.y - last_site.y)==1:
 				actor_add_behavior.emit(NormalJump.new(mouse_site, actor_site))
+				action_list.actions_num += 1
 			#新增殘影在滑鼠點擊位置
 			add_move_reflection.emit(mouse_site,last_site)
 		elif current_action_text == "Normal\nPunch":
