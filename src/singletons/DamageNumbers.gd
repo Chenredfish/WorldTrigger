@@ -20,7 +20,7 @@ func display_number(value:int, position:Vector2, is_critical:bool = false):
 	number.label_settings.outline_color = "#000"
 	number.label_settings.outline_size = 1
 	
-	call_deferred("add_child", number)
+	call_deferred("add_child", number) #object內建的函示之一，可以呼叫函式，第一個參數式名子，後續的參數為該函式所需的參數
 	
 	await number.resized
 	number.pivot_offset = Vector2(number.size / 2)

@@ -55,15 +55,8 @@ func _move_actor(aim_site:Vector2i, moved_actor:Node2D):
 	#aim_site-=Vector2i(1,1) #####大問題產生的問題
 	moved_actor.play_run_animate()
 	
-	while self.map_to_local(aim_site) != moved_actor.get_position():
-		if self.map_to_local(aim_site).x > moved_actor.get_position().x:
-			moved_actor.position.x+=2
-			moved_actor.turn_right()
-		else:
-			moved_actor.position.x-=2
-			moved_actor.turn_left()
-		
-		await get_tree().create_timer(0.1).timeout
+	var tween = create_tween()
+	tween.tween_property(moved_actor, "position", self.map_to_local(aim_site), 1)
 		
 	#print(aim_site)
 	await moved_actor.test_actor_animate.animation_finished
@@ -76,15 +69,8 @@ func _jump_actor(aim_site:Vector2i, moved_actor:Node2D):
 	#aim_site-=Vector2i(1,1) #####大問題產生的問題
 	moved_actor.play_run_animate()
 	
-	while self.map_to_local(aim_site) != moved_actor.get_position():
-		if self.map_to_local(aim_site).y > moved_actor.get_position().y:
-			moved_actor.position.y+=2
-			moved_actor.turn_right()
-		else:
-			moved_actor.position.y-=2
-			moved_actor.turn_left()
-		
-		await get_tree().create_timer(0.1).timeout
+	var tween = create_tween()
+	tween.tween_property(moved_actor, "position", self.map_to_local(aim_site), 1).set_ease(Tween.EASE_OUT)
 		
 	await moved_actor.test_actor_animate.animation_finished
 		
