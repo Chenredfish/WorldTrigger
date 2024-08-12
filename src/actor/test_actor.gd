@@ -4,6 +4,7 @@ class_name TestActor
 signal show_skill_btn_pressed
 
 @onready var test_actor_animate:AnimatedSprite2D = %test_actor_animate
+@onready var damage_number_original_position = $DamageNumberOriginalPosition
 
 func _init():
 	attack_amount = 20
@@ -37,3 +38,7 @@ func turn_left():
 func _on_touch_screen_button_pressed():
 	show_skill_btn_pressed.emit()
 	
+func take_damage(total_damage:int):
+	super(total_damage)
+	
+	DamageNumbers.display_number(total_damage, damage_number_original_position.global_position)

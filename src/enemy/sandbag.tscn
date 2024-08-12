@@ -48,3 +48,6 @@ sprite_frames = SubResource("SpriteFrames_1it4c")
 autoplay = "default"
 frame_progress = 0.350867
 flip_h = true
+
+[node name="DamageNumberOriginalPosition" type="Node2D" parent="."]
+position = Vector2(0, -8)

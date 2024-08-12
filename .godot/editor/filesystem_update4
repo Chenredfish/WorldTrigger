@@ -6,6 +6,7 @@ res://src/map/test_map.tscn
 res://src/UI/ui_layer.tscn
 res://src/UI/ready_fight_form.tscn
 res://src/actor/test_actor_roll_reflection.tscn
-res://src/UI/ready_fight_form.gd
-res://src/UI/action_list.tscn
-res://src/UI/action_list.gd
+res://src/singletons/DamageNumbers.gd
+res://src/actor/test_actor.gd
+res://src/enemy/sandbag.tscn
+res://src/enemy/sandbag.gd
