@@ -16,10 +16,10 @@ var current_actions:Array[ShowButtonContainer]
 func _ready():
 	show_button_container.hide()
 	
-func add_action(action : Button):
+func add_action(action : Button, action_value:int):
 	
 	if actions_num < 7:
-		current_actions.append(ShowButtonContainer.new())
+		current_actions.append(ShowButtonContainer.new(action_value))
 		current_actions[-1].custom_minimum_size = show_button_container.custom_minimum_size
 		actions.add_child(current_actions[-1])
 		
@@ -28,23 +28,24 @@ func add_action(action : Button):
 		new_action.text = action.text
 		new_action.add_theme_font_size_override("font_size", 11)
 		current_actions[-1].add_child(new_action)
-		actions_num += 1
+		actions_num += action_value
+		
 		new_action.pressed.connect(
 			func():
+				actions_num -= current_actions[-1].behavior_amount
 				remove_action.emit(current_actions[-1].get_child(0).text)
 				current_actions[-1].queue_free()
 				current_actions.resize(current_actions.size()-1)
 				
-				actions_num -= 1
-				
+				change_label()
 		)
 		change_label()
 		
 func remove_all_action():
 	while current_actions:
+		actions_num -= current_actions[0].behavior_amount
 		current_actions[0].queue_free()
 		current_actions.remove_at(0)
-		actions_num -= 1
 	action_end.emit()
 	actions_num = 0
 	change_label()

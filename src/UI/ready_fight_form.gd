@@ -18,6 +18,7 @@ var is_choose_site:bool = false
 var behaviors_is_full:bool = false
 
 var current_action_text:String = ""
+var current_action_value:int
 
 func _ready():
 	skill_menu.add_skill.connect(panel_add_skill)
@@ -34,7 +35,6 @@ func panel_add_skill(action : Button):
 	
 	current_action_text = action.text
 	
-	print(behaviors_is_full)
 	#行動已經滿了，無法添加
 	if behaviors_is_full:
 		current_action_text = "" #取代了is_choose_site
@@ -47,9 +47,10 @@ func panel_add_skill(action : Button):
 	#is_choose_site = false
 	show_actor_skill()
 	
-	action_list.add_action(action)
+	action_list.add_action(action, current_action_value)
 	
 	current_action_text = "" #取代了is_choose_site
+	current_action_value = 0
 
 func emit_choose_site(mouse_site:Vector2i, last_site:Vector2i, actor_site:Vector2i):
 	
@@ -62,14 +63,19 @@ func emit_choose_site(mouse_site:Vector2i, last_site:Vector2i, actor_site:Vector
 		if current_action_text == "Move":
 			if abs(mouse_site.x - last_site.x)==1: #目標位置和角色位置距離為1
 				actor_add_behavior.emit(NormalMove.new(mouse_site))
+				
+				current_action_value = NormalMove.new(mouse_site).behavior_amount
 
 			elif abs(mouse_site.y - last_site.y)==1:
 				actor_add_behavior.emit(NormalJump.new(mouse_site, actor_site))
-				action_list.actions_num += 1
+				
+				current_action_value = NormalJump.new(mouse_site, actor_site).behavior_amount
 			#新增殘影在滑鼠點擊位置
 			add_move_reflection.emit(mouse_site,last_site)
 		elif current_action_text == "Normal\nPunch":
 			actor_add_behavior.emit(NormalAttack.new(mouse_site))
+			
+			current_action_value = NormalAttack.new(mouse_site).behavior_amount
 		choose_move_site.emit()
 
 func left_pressed_mouse(mouse_site:Vector2i, last_site:Vector2i, actor_site:Vector2i):
