@@ -119,7 +119,7 @@ func remove_move_reflection(remove_number:int):
 			actor_reflections.remove_at(remove_number)
 
 func actor_add_behavior(added_behavior:BaseBehavior):
-	actor.add_behavior(added_behavior)
+	await actor.add_behavior(added_behavior)
 	#elif correct_actor_site.y - aim_site.y:
 	#偵測是否滿行動
 	_test_behaviors_is_full()

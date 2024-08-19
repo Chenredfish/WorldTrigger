@@ -34,8 +34,10 @@ func panel_add_skill(action : Button):
 	
 	current_action_text = action.text
 	
+	print(behaviors_is_full)
 	#行動已經滿了，無法添加
 	if behaviors_is_full:
+		current_action_text = "" #取代了is_choose_site
 		return
 	
 	#選擇位置
@@ -50,6 +52,12 @@ func panel_add_skill(action : Button):
 	current_action_text = "" #取代了is_choose_site
 
 func emit_choose_site(mouse_site:Vector2i, last_site:Vector2i, actor_site:Vector2i):
+	
+	
+	#行動已經滿了，無法添加(二次防護，避免超出行動選擇)
+	if behaviors_is_full:
+		return
+	
 	if (last_site-mouse_site).length_squared() ==1:
 		if current_action_text == "Move":
 			if abs(mouse_site.x - last_site.x)==1: #目標位置和角色位置距離為1

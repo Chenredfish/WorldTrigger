@@ -5,5 +5,6 @@ res://src/actor/test_actor.tscn
 res://src/map/test_map.tscn
 res://src/UI/ui_layer.tscn
 res://src/UI/ready_fight_form.tscn
-res://src/singletons/DamageNumbers.gd
+res://src/UI/ready_fight_form.gd
+res://src/UI/skill_menu.tscn
 res://src/map/test_map.gd
